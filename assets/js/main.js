@@ -1,3 +1,21 @@
+
+//Creates the navbar element and injects it into the page
+//                              -Chris
+
+var navbar = document.createElement("section");
+var button = document.createElement("button");
+var span = document.createElement("span");
+span.innerHTML = "Toggle Menu";
+button.className = "c-hamburger c-hamburger--htx c-hamburger--htra"
+document.body.appendChild(navbar);
+navbar.id = "nav";
+navbar.appendChild(button);
+button.appendChild(span);
+
+//Creates the expanded navbar screen and injects it into the page
+//                              -Chris
+
+
 //Scroll transition when click on link
 $(document).ready(function () {
 	$('a[href^="#"]').on('click',function (e) {
@@ -114,4 +132,5 @@ $(".nav-six").mouseover(function(){
 $(".nav-list a").mouseout(function(){
 	$('#nav-expand').css('background-image', 'url(assets/img/nav.JPG)');
 });
+
 
