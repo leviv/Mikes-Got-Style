@@ -1,7 +1,18 @@
-
 //Creates the navbar element and injects it into the page
 //                              -Chris
-
+/*
+ * 
+ * 
+ * 
+ * I'm commenting this out for now while I work on the page 
+ * because it's creating an element when the element is already
+ * there
+ * 
+ * Feel free to uncomment if you need
+ * 
+ * 
+ * 
+ * 
 var navbar = document.createElement("section");
 var button = document.createElement("button");
 var span = document.createElement("span");
@@ -11,9 +22,10 @@ document.body.appendChild(navbar);
 navbar.id = "nav";
 navbar.appendChild(button);
 button.appendChild(span);
-
+*/
 //Creates the expanded navbar screen and injects it into the page
 //                              -Chris
+
 
 
 //Scroll transition when click on link
@@ -109,28 +121,3 @@ $("#nav").click(function() {
 		$(".c-hamburger").css({'transform' : 'rotate(0deg)'});
 	}
 });
-
-$(".nav-one").mouseover(function(){
-	$('#nav-expand').css('background-image', 'url(assets/img/nav1.JPG)');
-});
-$(".nav-two").mouseover(function(){
-	$('#nav-expand').css('background-image', 'url(assets/img/nav2.JPG)');
-});
-$(".nav-three").mouseover(function(){
-	$('#nav-expand').css('background-image', 'url(assets/img/nav3.JPG)');
-});
-$(".nav-four").mouseover(function(){
-	$('#nav-expand').css('background-image', 'url(assets/img/nav6.JPG)');
-});
-$(".nav-five").mouseover(function(){
-	$('#nav-expand').css('background-image', 'url(assets/img/nav4.JPG)');
-});
-$(".nav-six").mouseover(function(){
-	$('#nav-expand').css('background-image', 'url(assets/img/nav10.JPG)');
-});
-
-$(".nav-list a").mouseout(function(){
-	$('#nav-expand').css('background-image', 'url(assets/img/nav.JPG)');
-});
-
-
