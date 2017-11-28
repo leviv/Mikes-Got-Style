@@ -1,0 +1,704 @@
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<title>CS312 Assignment - Critters - Creating classes </title>
+		<link rel="stylesheet" type="text/css" href="assets/css/test.css">
+		<style type="text/css">
+			.auto-style1 {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+
+	<body stylesrc="../../cs307/index.htm">
+
+		<p align="center"><font size="5">CS 312 Assignment 11, Critters, Implementing 
+			classes</font></p>
+
+		<p align="left"><b>Programming 
+			Assignment 11: </b>Individual Assignment. <b>You must complete this assignment by 
+			yourself. You cannot work with anyone else in the class or with someone 
+			outside of the class. You are encouraged to get help from the instructional 
+			staff. Recall we will check submissions with plagiarism detection software. 
+			If you copy code from someone else you will be subject to the penalties for
+			<a href="../syllabus.htm#Collaboration">academic dishoesty</a>.</b></p>
+
+		<p align="left">Placed online: Tuesday, November 21<br>
+			20 points, ~2% of total grade<br>
+			Due: no later than <font size="3">11 pm, 
+			<span style="background-color: #FFFF00"><b>Wednesday</b></span>, December 30</font></p>
+
+		<p align="left"><b>Provided Files: </b>There are multiple support files you will have to download from the 
+			assignment web page.</p>
+		<ul>
+			<li>
+
+				<p align="left">
+					<a href="../javaCode/A11_Critters/CritterMain.java">CritterMain.java</a>. The class with the main method for the GUI and 
+					simulation. </p>
+			</li>
+			<li>
+
+				<p align="left">
+					<a href="../javaCode/A11_Critters/MiniMain.java">MiniMain.java</a>. A 
+					class with some simple Critter tests. Output is to System.out. Use this 
+					to check if your classes are correct.</p>
+			</li>
+			<li>
+
+				<p align="left">
+					<a href="../javaCode/A11_Critters/Critter.java">Critter.java</a>. The 
+					base class for the animals in the simulator</p>
+			</li>
+			<li>
+
+				<p align="left">
+					<a href="../javaCode/A11_Critters/Stone.java">Stone.java.</a> A simple Critter. </p>
+			</li>
+			<li>
+
+				<p align="left">Ant.java, Bird.java, Hippo.java, Vulture.java, and Longhorn.java. 
+					The Critter classes you will implement</p>
+			</li>
+			<li>
+
+				<p align="left">
+					<a href="../javaCode/A11_Critters/A11.zip">A11.zip</a>. All the given files in one zip file for easier downloading 
+					if you are familiar with the zip archive format.</p>
+			</li>
+		</ul>
+
+		<p align="left">
+			<b>NOTE, when you compile the code you may get a compiler warning. For 
+				this assignment, these compiler warnings can be ignored.</b></p>
+		<hr>
+		<p align="left"><b>Purpose: </b>The purposes of this assignment are:</p>
+		<ol>
+			<li>To practice implementing classes</li>
+			<li>To practice inheriting from classes.</li>
+			<li>To learn how to work within a much larger program</li>
+			<li>To have fun creating a competitive Longhorn Critter.</li>
+		</ol>
+		<p><b>Description: </b></p>
+		<p>Many, many thanks to Marty Stepp, Stuart Reges, and Steve Gribble for sharing this assignment with me.</p>
+		<p><b>Complete a set of classes that define the behavior of various 
+			animals (Critters). You are a class that 
+			implement a graphical simulation of a two dimensional world with many 
+			Critters of different types moving around on it. Different kinds of Critters 
+			that move, eat, and fight in various ways. As you implement the required classes you are 
+			defining those differences.</b></p>
+		<p>Each species of Critter (class) has a score during the game. A class's 
+			score is based on how many Critters of that type are <b>alive</b>, how much
+			<b>food</b> they have eaten, and how many other Critters they have <b>
+			defeated</b>.</p>
+		<p><b>Moving: </b>During each round of the simulation each critters is asked which 
+			direction it wants to move. A critter can move one square to the north, 
+			east, south, or west or the critter may choose to remain in its current 
+			location. </p>
+		<p>The directions a Critter may move represented as a Java Enum (enumerated 
+			type) named Direction. The Direction Enum is <b>nested inside the Critter 
+			class</b>. Classes that are descendants of Critter (they extend Critter directly 
+			or indirectly) can access the Enum values with the code Direction.NORTH or 
+			Direction.CENTER for example.</p>
+		<p>The world the critters are moving around in is of finite size, but 
+			it is a <a href="http://en.wikipedia.org/wiki/Image:Torus.png">torus</a>, 
+			like a doughnut; if a critter goes off the right edge of the 2d grid they 
+			pop up on the left edge and vice versa. Likewise if a critter goes off the 
+			south edge of the 2d grid they pop up on the north edge and vice versa. The 
+			critter world is divided into cells that have integer coordinates like the 
+			2d arrays we studied in class. The upper left cell has coordinates (0,0). x 
+			coordinates increase to the right and y coordinates increase as you go down. 
+			The default size of the world is 60 cells across and 50 cells high, although 
+			this can be altered when the program is started.</p>
+		<p><b><span style="background-color: #FFFF00">Your code is NOT in control of 
+			the overall program execution. You won't write the code that actually 
+			creates the various critter objects. Instead you are implementing a series of 
+			classes to specification (&quot;to 'spec' &quot;) and the given code  uses the 
+			classes you implement. The existing classes are clients of your classes As we talked about in 
+			lecture this is how most programs 
+			are written. They are not written by a single person, rather by a team of 
+			people.</span></b></p>
+		<p>You may find yourself wanting to move your critter several spaces at 
+			once, but this is not possible. The only way a critter can move is if the 
+			simulator asks the critter to move and the critter simply responds with the 
+			direction it wants to move. The simulator will then move the critter one 
+			space in the appropriate direction. This is a good introduction to the kind 
+			of programming that is done with objects and if you move on to the follow 
+			class, CS314, you will be doing a lot of programming in this style. (If you 
+			want to move several spaces you will have to have your class remember what 
+			its next move should be using an instance variable so it can give the right 
+			move to the simulator the next time the simulator asks.)</p>
+		<p><b>Fighting: </b>As the simulation runs critters can collide with each other by moving 
+			into the same location. Again, the simulator takes care of all of this, not 
+			the critters. When two critters enter the same cell they fight to the death. The winning 
+			Critter survives and the 
+			losing Critter is removed from the simulation. (Again, most of this is 
+			handled by the simulation, not by the critters.)  </p>
+		<p>The values for fighting are a Java Enum (like our Suits) stored inside 
+			the Critter class. The name of the Enum is Attack. Critters simply pick a value for 
+			ROAR, POUNCE, or SCRATCH 
+			when the simulator asks them. A Critter can also FORFEIT meaning it gives up 
+			and the other Critter wins as long as it ROARs, POUNCEs, or SCRATCHes. If 
+			both Critters FORFEIT, one of them wins at random. The outcome of the duels 
+			are:</p>
+		<div align="center">
+			<center>
+				<table border="1" cellspacing="1" width="60%" height="115">
+					<tr>
+						<td width="20%" align="center" height="19">&nbsp;</td>
+						<td width="80%" align="center" height="19" colspan="4">Critter #2</td>
+					</tr>
+					<tr>
+						<td width="20%" align="center" height="71" rowspan="4">Critter #1</td>
+						<td width="20%" align="center" height="19">&nbsp;</td>
+						<td width="20%" align="center" height="19">ROAR</td>
+						<td width="20%" align="center" height="19">POUNCE</td>
+						<td width="20%" align="center" height="19">SCRATCH</td>
+					</tr>
+					<tr>
+						<td width="20%" align="center" height="14">ROAR</td>
+						<td width="20%" align="center" height="14">random winner</td>
+						<td width="20%" align="center" height="14">#2 wins</td>
+						<td width="20%" align="center" height="14">#1wins</td>
+					</tr>
+					<tr>
+						<td width="20%" align="center" height="19">POUNCE</td>
+						<td width="20%" align="center" height="19">#1 wins</td>
+						<td width="20%" align="center" height="19">random winner</td>
+						<td width="20%" align="center" height="19">#2 wins</td>
+					</tr>
+					<tr>
+						<td width="20%" align="center" height="19">SCRATCH</td>
+						<td width="20%" align="center" height="19">#2 wins</td>
+						<td width="20%" align="center" height="19">#1 wins</td>
+						<td width="20%" align="center" height="19">random winner</td>
+					</tr>
+				</table>
+			</center>
+		</div>
+		<p><b>Mating: </b>When two Critters of the same species collide they do not 
+			fight. If neither of the Critters have mated before during the simulation, 
+			they mate to produce a new Critter of their type. This takes place 
+			automatically and Critters have no choice in whether to mate or not. 
+			Critters are vulnerable to attack when mating. any other Critter that 
+			collides with them will defeat them. Each Critter can mate only once during 
+			its lifetime.</p>
+		<p><b>Eating: </b>The simulation world also contains food (represented by 
+			the period character, &quot;.&quot;) for the animals to eat. There are pieces of food 
+			on the world initially, and new food slowly grows into the world over time. 
+			As an animal moves, it may encounter food, in which case the simulator will 
+			ask your animal whether it wants to eat it. Different kinds of animals have 
+			different eating behavior; some always eat, and others only eat under 
+			certain conditions.</p>
+		<p>Every time one class of animals eats a few pieces of food, that animal 
+			will be put to &quot;sleep&quot; by the simulator for a small amount of time. While 
+			asleep, animals cannot move, and if they enter a fight with another animal, 
+			they will always lose.</p>
+		<p><b>Inheritance</b>: Each class you write will be a descendant of&nbsp; 
+			the super class, Critter. You will use inheritance as discussed in Chapter 9 
+			of the textbook. Inheritance makes it easier for the simulation in 
+			CritterMain to &quot;talk&quot; (call methods) on the Critters. In helps ensure we 
+			know what methods your have implemented. Most of your class headers will 
+			start like this:</p>
+		<p><code>public class Ant extends Critter { ...</code></p>
+		<p>The Critter class contains the following methods. You will override 
+			(replace with a new version in your classes) some or all of these methods 
+			depending on the class. </p>
+		<table border="1" cellspacing="1" width="100%">
+			<tr>
+				<td width="100%">
+					<ul>
+						<li><code>public boolean eat() <br>
+							When your animal encounters food, our code calls this on it to ask 
+							whether it wants to eat (true) or not (false).<br>
+							&nbsp;</code></li>
+						<li><code>public Attack fight(String opponent) <br>
+							When two animals move onto the same square of the grid, they fight. 
+							When they collide, our code calls this on each animal to ask it what 
+							kind of attack it wants to use in a fight with the given opponent.<br>
+							&nbsp;</code></li>
+						<li><code>public Color getColor() <br>
+							Every time the board updates, our code calls this on your animal to 
+							ask it what color it wants to be drawn with.<br>
+							&nbsp;</code></li>
+						<li><code>public Direction getMove() <br>
+							Every time the board updates, our code calls this on your animal to 
+							ask it which way it wants to move.<br>
+							&nbsp;</code></li>
+						<li><code>public String toString() <br>
+							Every time the board updates, our code calls this on your animal to 
+							ask what letter it should be drawn as. <br>
+							This must return a String of length 1.</code></li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+		<p><b><span style="background-color: #FFFF00">Note: You are not necessarily 
+			required to write <code>extends Critter</code> on every single animal class you write. If 
+			you find that two animals are very similar to each other, you should have 
+			one extend the other to reduce redundancy and take advantage of inheritance.</span></b></p>
+		<p ALIGN="LEFT"></p>
+		<font SIZE="4"><b>
+			<p>Running the Simulator: </p>
+			</b></font><font FACE="Times New Roman,Times New Roman" SIZE="3">
+		<p>When you press the Go button, it begins a series of turns. On each turn, the 
+			simulator does the following for each animal: </p>
+		<ul>
+			<li>move the animal once (calling its </font>
+		<font FACE="Courier New,Courier New" SIZE="2">getMove </font>
+		<font FACE="Times New Roman,Times New Roman" SIZE="3">method), in random order
+		</font></li>
+		<li><font FACE="Times New Roman,Times New Roman" SIZE="3">if the animal has 
+			moved onto an occupied square, fight! (call both animals' </font>
+			<font FACE="Courier New,Courier New" SIZE="2">fight </font>
+			<font FACE="Times New Roman,Times New Roman" SIZE="3">methods) or mate </font>
+		</li>
+		<li><font FACE="Times New Roman,Times New Roman" SIZE="3">if the animal has 
+			moved onto food, ask it if it wants to eat (call the animal's </font>
+			<font FACE="Courier New,Courier New" SIZE="2">eat </font>
+			<font FACE="Times New Roman,Times New Roman" SIZE="3">method) </font></li>
+		</ul>
+	<font FACE="Times New Roman,Times New Roman" SIZE="3">
+		<p>After moving all animals, the simulator redraws the screen, asking each 
+			animal for its </font><font FACE="Courier New,Courier New" SIZE="2">toString
+	</font><font FACE="Times New Roman,Times New Roman" SIZE="3">and </font>
+	<font FACE="Courier New,Courier New" SIZE="2">getColor </font>
+	<font FACE="Times New Roman,Times New Roman" SIZE="3">values. It can be 
+		difficult to test and debug with many animals. We suggest adjusting the initial 
+		settings to use a smaller world and fewer animals. There is also a </font>
+	<font FACE="Times New Roman,Times New Roman" SIZE="3"><b>Debug checkbox </b>
+		that, when checked, prints console output about the game behavior. You can also 
+		use the MiniMain program to print out some simple tests.</font></p>
+<p><font face="Times New Roman,Times New Roman">When your start the program you 
+	will see a menu GUI like the following:</font></p>
+<p><img border="0" src="../../images/cs312/CritterStartMenu.jpg" width="265" height="370"></p>
+<p>You can ignore the <b>Secure tournament mode </b>and <b>Network features</b> 
+	check boxes. They are not used in this version of the program.</p>
+<p><b>Critters to implement:</b></p>
+<p>Here is where you actually get to write code! Complete four 
+	critter classes. Each class must have only one constructor and that 
+	constructor must accept exactly the parameter(s) described below. For 
+	random moves each possible choice must be equally likely. You may either use 
+	an object of type <code>Random</code>&nbsp; or the<code> Math.random()</code> 
+	method to obtain pseudorandom numbers. </p>
+<p><b>Ant:</b></p>
+<table border="1" cellspacing="1" width="60%">
+	<tr>
+		<td width="20%"><b>constructor</b></td>
+		<td width="50%"><code>public Ant(boolean walkSouth)</code></td>
+	</tr>
+	<tr>
+		<td width="20%"><b>fight behavior</b></td>
+		<td width="50%">always scratch</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>color</b></td>
+		<td width="50%">red</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>movement behavior</b></td>
+		<td width="50%">if the Ant was constructed with a walkSouth value of 
+			true then it alternates between south and east in a zigzag (S, E, S, E, 
+			S, ...) 
+			<p>if the Ant was constructed with a walkSouth value of false then it 
+				alternates between north and east in a zigzag (N, E, N, E, N, ...) </td>
+	</tr>
+	<tr>
+		<td width="20%"><b>eating behavior</b></td>
+		<td width="50%">always returns true</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>toString</b></td>
+		<td width="50%">&quot;%&quot;&nbsp; - the percent sign</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<p><b>Bird:</b></p>
+<table border="1" cellspacing="1" width="60%">
+	<tr>
+		<td width="20%"><b>constructor</b></td>
+		<td width="50%"><code>public Bird()</code></td>
+	</tr>
+	<tr>
+		<td width="20%"><b>fight behavior</b></td>
+		<td width="50%">roar if opponent looks like an Ant &quot;%&quot;, otherwise 
+			pounces</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>color</b></td>
+		<td width="50%">blue</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>movement behavior</b></td>
+		<td width="50%">a clockwise square; first goes north 3 times, then east 
+			3 times, then south 3 times, then west 3 times, then repeats</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>eating behavior</b></td>
+		<td width="50%">never eats (always returns false)</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>toString</b></td>
+		<td width="50%">&quot;^&quot; caret&nbsp;&nbsp;&nbsp; if the bird's last move was 
+			north or it has not moved.<br>
+			&quot;&gt;&quot; greater than&nbsp;&nbsp;&nbsp;&nbsp; if the bird's last move was 
+			east<br>
+			&quot;V&quot; capital v&nbsp;&nbsp;&nbsp;&nbsp; if the bird's last move was south<br>
+			&quot;&lt;&quot; less than&nbsp;&nbsp;&nbsp;&nbsp; if the bird's last move was west</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<p><b>Hippo:</b></p>
+<table border="1" cellspacing="1" width="60%" height="175">
+	<tr>
+		<td width="20%" height="19"><b>constructor</b></td>
+		<td width="50%" height="19"><code>public Hippo(int hunger)</code></td>
+	</tr>
+	<tr>
+		<td width="20%" height="38"><b>fight behavior</b></td>
+		<td width="50%" height="38">if this Hippo is hungry (if eat would return 
+			true) then scratches, else pounces</td>
+	</tr>
+	<tr>
+		<td width="20%" height="17"><b>color</b></td>
+		<td width="50%" height="17">gray if the hippo is hungry (if eat would 
+			return true), otherwise white</td>
+	</tr>
+	<tr>
+		<td width="20%" height="57"><b>movement behavior</b></td>
+		<td width="50%" height="57">moves 5 steps in a random direction (north, 
+			south, east, or west), then chooses a new random direction and repeats</td>
+	</tr>
+	<tr>
+		<td width="20%" height="19"><b>eating behavior</b></td>
+		<td width="50%" height="19">returns true the first hunger (parameter to 
+			constructor) times it is called and false after that</td>
+	</tr>
+	<tr>
+		<td width="20%" height="19"><b>toString</b></td>
+		<td width="50%" height="19">the number of pieces of food this hippo 
+			still wants to eat as a String</td>
+	</tr>
+</table>
+<p ALIGN="LEFT"></p>
+<font SIZE="3">
+	<p>The </font><b><font FACE="Courier New,Courier New" SIZE="2">Hippo </font>
+		<font FACE="Times New Roman,Times New Roman" SIZE="3">constructor </font></b>
+<font SIZE="3">accepts a parameter for the maximum number of food that </font>
+<font FACE="Courier New,Courier New" SIZE="2">Hippo </font><font SIZE="3">will 
+	eat in its lifetime (the number of times it will return </font>
+<font FACE="Courier New,Courier New" SIZE="2">true </font><font SIZE="3">from a 
+	call to </font><font FACE="Courier New,Courier New" SIZE="2">eat</font><font SIZE="3">). 
+		For example, a </font><font FACE="Courier New,Courier New" SIZE="2">Hippo </font>
+<font SIZE="3">constructed with a parameter value of 8 will return </font>
+<font FACE="Courier New,Courier New" SIZE="2">true </font><font SIZE="3">the 
+	first 8 times </font><font FACE="Courier New,Courier New" SIZE="2">eat </font>
+<font SIZE="3">is called and </font>
+<font FACE="Courier New,Courier New" SIZE="2">false </font><font SIZE="3">after 
+	that. Assume that the value passed is non-negative. </p>
+<p>The </font><b><font FACE="Courier New,Courier New" SIZE="2">toString </font>
+	<font FACE="Times New Roman,Times New Roman" SIZE="3">method </font></b>
+<font SIZE="3">for a </font><font FACE="Courier New,Courier New" SIZE="2">Hippo
+</font><font SIZE="3">returns the number of times that a call to </font>
+<font FACE="Courier New,Courier New" SIZE="2">eat </font><font SIZE="3">would 
+	return </font><font FACE="Courier New,Courier New" SIZE="2">true </font>
+<font SIZE="3">for that </font><font FACE="Courier New,Courier New" SIZE="2">
+	Hippo</font><font SIZE="3">. For example, if a </font>
+<font FACE="Courier New,Courier New" SIZE="2">new Hippo(4) </font>
+<font SIZE="3">is constructed, initially its </font>
+<font FACE="Courier New,Courier New" SIZE="2">toString </font><font SIZE="3">
+	return </font><font FACE="Courier New,Courier New" SIZE="2">&quot;4&quot;</font><font SIZE="3">. 
+		After </font><font FACE="Courier New,Courier New" SIZE="2">eat </font>
+<font SIZE="3">has been called on it once, calls to </font>
+<font FACE="Courier New,Courier New" SIZE="2">toString </font><font SIZE="3">
+	return </font><font FACE="Courier New,Courier New" SIZE="2">&quot;3&quot;</font><font SIZE="3">, 
+		and so on, until the </font><font FACE="Courier New,Courier New" SIZE="2">Hippo
+</font><font SIZE="3">is no longer hungry, after which all calls to </font>
+<font FACE="Courier New,Courier New" SIZE="2">toString </font><font SIZE="3">
+	return </font><font FACE="Courier New,Courier New" SIZE="2">&quot;0&quot;</font><font SIZE="3">. 
+		You can convert a number to a string by concatenating it with an empty string. 
+		For example, </font><font FACE="Courier New,Courier New" SIZE="2">&quot;&quot; + 7 </font>
+<font SIZE="3">makes </font><font FACE="Courier New,Courier New" SIZE="2">&quot;7&quot;</font><font SIZE="3">.
+</font></p>
+<p>&nbsp;</p>
+<p><b>Vulture:</b></p>
+<table border="1" cellspacing="1" width="60%" height="175">
+	<tr>
+		<td width="20%"><b>constructor</b></td>
+		<td width="50%"><code>public Vulture()</code></td>
+	</tr>
+	<tr>
+		<td width="20%"><b>fight behavior</b></td>
+		<td width="50%">roar if opponent looks like an Ant &quot;%&quot;, otherwise 
+			pounces</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>color</b></td>
+		<td width="50%">black</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>movement behavior</b></td>
+		<td width="50%">a clockwise square; first goes north 3 times, then east 
+			3 times, then south 3 times, then west 3 times, then repeats</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>eating behavior</b></td>
+		<td width="50%">returns true if this vulture is hungry. A vulture is 
+			initially hungry and remains hungry until they eat once. After eating 
+			once the vulture is not hungry until they get into a fight. After one or 
+			more fights the vulture is hungry again.</td>
+	</tr>
+	<tr>
+		<td width="20%"><b>toString</b></td>
+		<td width="50%">&quot;^&quot; caret&nbsp;&nbsp;&nbsp; if the vulture's last move was 
+			north or it has not moved.<br>
+			&quot;&gt;&quot; greater than&nbsp;&nbsp;&nbsp;&nbsp; if the vulture's last move was 
+			east<br>
+			&quot;V&quot; capital v&nbsp;&nbsp;&nbsp;&nbsp; if the vulture'sl ast move was south<br>
+			&quot;&lt;&quot; less than&nbsp;&nbsp;&nbsp;&nbsp; if the vulture's last move was west</td>
+	</tr>
+</table>
+<p ALIGN="LEFT"></p>
+<font SIZE="3">
+	<p>A </font><font FACE="Courier New,Courier New" SIZE="2">Vulture </font>
+<font SIZE="3">is a specific sub-category of bird with some changes. Think of 
+	the </font><font FACE="Courier New,Courier New" SIZE="2">Vulture </font>
+<font SIZE="3">as having a &quot;</font><font FACE="Times New Roman,Times New Roman" SIZE="3"><b>hunger</b></font><font SIZE="3">&quot; 
+	that is enabled when he is first born and also by fighting. Initially the </font>
+<font FACE="Courier New,Courier New" SIZE="2">Vulture </font><font SIZE="3">is 
+	hungry (so </font><font FACE="Courier New,Courier New" SIZE="2">eat </font>
+<font SIZE="3">would return </font>
+<font FACE="Courier New,Courier New" SIZE="2">true </font><font SIZE="3">from a 
+	single call). Once the </font><font FACE="Courier New,Courier New" SIZE="2">
+		Vulture </font><font SIZE="3">eats a single piece of food, he becomes non-hungry 
+			(so future calls to </font><font FACE="Courier New,Courier New" SIZE="2">eat
+</font><font SIZE="3">would return </font>
+<font FACE="Courier New,Courier New" SIZE="2">false</font><font SIZE="3">). But 
+	if the </font><font FACE="Courier New,Courier New" SIZE="2">Vulture </font>
+<font SIZE="3">gets into a fight or a series of fights (if </font>
+<font FACE="Courier New,Courier New" SIZE="2">fight </font><font SIZE="3">is 
+	called on it one or more times), it becomes hungry again. When a </font>
+<font FACE="Courier New,Courier New" SIZE="2">Vulture </font><font SIZE="3">is 
+	hungry, the next call to </font><font FACE="Courier New,Courier New" SIZE="2">
+		eat </font><font SIZE="3">should return </font>
+<font FACE="Courier New,Courier New" SIZE="2">true</font><font SIZE="3">. Eating 
+	once causes the </font><font FACE="Courier New,Courier New" SIZE="2">Vulture
+</font><font SIZE="3">to become &quot;full&quot; again so that future calls to eat will 
+	return </font><font FACE="Courier New,Courier New" SIZE="2">false</font><font SIZE="3">, 
+		until the </font><font FACE="Courier New,Courier New" SIZE="2">Vulture</font><font SIZE="3">'s 
+			next fight or series of fights. </font></p>
+<p>&nbsp;</p>
+<p><b>Longhorn</b></p>
+<table border="1" cellspacing="1" width="60%">
+	<tr>
+		<td width="20%"><b>constructor</b></td>
+		<td width="50%"><code>public Longhorn() // may not accept any parameters</code></td>
+	</tr>
+	<tr>
+		<td width="20%"><b>other methods</b></td>
+		<td width="50%">you decide</td>
+	</tr>
+</table>
+<p ALIGN="LEFT"></p>
+<font SIZE="3"><b>
+	<p>You decide </b></font><font FACE="Times New Roman,Times New Roman" SIZE="3">
+		the behavior of your </font><font face="Courier New,Courier New" size="2">
+			Longhorn </font><font FACE="Times New Roman,Times New Roman" SIZE="3">class. 
+				Your Longhorn class should be competitive (it should win) and interesting. Part of your grade will be based upon writing creative and non-trivial </font>
+<font face="Courier New,Courier New" size="2">Longhorn </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">behavior. The following 
+	are some guidelines and hints about how to write an interesting Longhorn. </p>
+<p>Your </font><font face="Courier New,Courier New" size="2">Longhorn</font><font FACE="Times New Roman,Times New Roman" SIZE="3">'s 
+	fighting behavior may want to utilize the </font>
+<font FACE="Courier New,Courier New" SIZE="2">opponent </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">parameter to the </font>
+<font FACE="Courier New,Courier New" SIZE="2">fight </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">method, which tells you 
+	what kind of critter you are fighting against (such as </font>
+<font FACE="Courier New,Courier New" SIZE="2">&quot;%&quot; </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">if you are fighting 
+	against a </font><font FACE="Courier New,Courier New" SIZE="2">Ant</font><font FACE="Times New Roman,Times New Roman" SIZE="3">). 
+		Your </font><font face="Courier New,Courier New" size="2">Longhorn </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">can return any text you 
+	like from </font><font FACE="Courier New,Courier New" SIZE="2">toString </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">(besides </font>
+<font FACE="Courier New,Courier New" SIZE="2">null</font><font FACE="Times New Roman,Times New Roman" SIZE="3">) 
+	and any color from </font><font FACE="Courier New,Courier New" SIZE="2">getColor</font><font FACE="Times New Roman,Times New Roman" SIZE="3">. 
+		Each critter's </font><font FACE="Courier New,Courier New" SIZE="2">getColor
+</font><font FACE="Times New Roman,Times New Roman" SIZE="3">and </font>
+<font FACE="Courier New,Courier New" SIZE="2">toString </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">are called on each 
+	simulation round, so you can have a </font>
+<font FACE="Courier New,Courier New" SIZE="2">Longhorn </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">that displays differently 
+	over time. The </font><font FACE="Courier New,Courier New" SIZE="2">toString
+</font><font FACE="Times New Roman,Times New Roman" SIZE="3">text is also passed 
+	to other animals when they fight you; you may want to try to fool other animals.
+	</p>
+<p>Unlike most assignments, your </font>
+<font FACE="Courier New,Courier New" SIZE="2">Longhorn </font><font SIZE="3"><b>
+	can use any advanced material </b></font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">you happen to know and are 
+	part of Java 7.</p>
+<p>Each critter class has some </font><font SIZE="3"><b>additional methods </b>
+</font><font FACE="Times New Roman,Times New Roman" SIZE="3">that it receives by 
+	inheritance from </font><font FACE="Courier New,Courier New" SIZE="2">Critter</font><font FACE="Times New Roman,Times New Roman" SIZE="3">. 
+		Your </font><font FACE="Courier New,Courier New" SIZE="2">Longhorn </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3">may want to use these 
+	methods to guide its behavior. None of the methods below are needed for </font>
+<font FACE="Courier New,Courier New" SIZE="2">Ant</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+</font><font FACE="Courier New,Courier New" SIZE="2">Bird</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+</font><font FACE="Courier New,Courier New" SIZE="2">Hippo</font><font FACE="Times New Roman,Times New Roman" SIZE="3">, 
+	or </font><font FACE="Courier New,Courier New" SIZE="2">Vulture</font><font FACE="Times New Roman,Times New Roman" SIZE="3">. 
+		Do not alter or override these methods.</p>
+</font>
+<table border="1" cellspacing="1" width="60%">
+	<tr>
+		<td width="100%">
+			<p ALIGN="LEFT"></p>
+			<ul>
+				<li><font FACE="Courier New,Courier New" SIZE="2">public int getX()</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+					</font><font FACE="Courier New,Courier New" SIZE="2">public int getY()
+					</font><font FACE="Times New Roman,Times New Roman" SIZE="3">Returns your 
+					critter's current x and y coordinates. For example, to check whether your 
+					critter's x-coordinate is greater than 10, you would write code such as:
+					</font><font FACE="Courier New,Courier New" SIZE="2">if (getX() &gt; 10) {<br>
+					&nbsp;</font></li>
+				<li><font FACE="Courier New,Courier New" SIZE="2">public int getWidth()</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+					</font><font FACE="Courier New,Courier New" SIZE="2">public int getHeight()
+					</font><font FACE="Times New Roman,Times New Roman" SIZE="3">Returns the 
+					width and height of the simulation grid. <br>
+					&nbsp;</font></li>
+				<li><font FACE="Times New Roman,Times New Roman" SIZE="2">&nbsp;</font><font FACE="Courier New,Courier New" SIZE="2">public 
+					String getNeighbor(Direction direction) </font>
+					<font FACE="Times New Roman,Times New Roman" SIZE="3">Returns a </font>
+					<font FACE="Courier New,Courier New" SIZE="2">String </font>
+					<font FACE="Times New Roman,Times New Roman" SIZE="3">representing what is 
+						next to your critter in the given direction. </font>
+					<font FACE="Courier New,Courier New" SIZE="2">&quot; &quot; </font>
+					<font FACE="Times New Roman,Times New Roman" SIZE="3">means an empty 
+						square. For example, to check if your neighbor to the west is a </font>
+					<font FACE="Courier New,Courier New" SIZE="2">&quot;Q&quot;</font><font FACE="Times New Roman,Times New Roman" SIZE="3">, 
+					you could write this in your </font>
+					<font FACE="Courier New,Courier New" SIZE="2">getMove </font>
+					<font FACE="Times New Roman,Times New Roman" SIZE="3">method: </font>
+					<font FACE="Courier New,Courier New" SIZE="2">if (getNeighbor(Direction.WEST).equals(&quot;Q&quot;)) 
+						{ <br>
+						&nbsp;</font></li>
+				<li><font FACE="Courier New,Courier New" SIZE="2">public void win()</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+					</font><font FACE="Courier New,Courier New" SIZE="2">public void sleep()</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+					</font><font FACE="Courier New,Courier New" SIZE="2">public void mate()</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+					</font><font FACE="Courier New,Courier New" SIZE="2">public void reset()</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+					</font><font FACE="Courier New,Courier New" SIZE="2">public void lose()</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+					</font><font FACE="Courier New,Courier New" SIZE="2">public void wakeup()</font><font FACE="Times New Roman,Times New Roman" SIZE="3">,
+					</font><font FACE="Courier New,Courier New" SIZE="2">public void mateEnd()
+					</font><font FACE="Times New Roman,Times New Roman" SIZE="3">The simulator 
+					calls these methods on your critter to notify you when you have won/lost a 
+					fight, been put to sleep/ wake up, start/end mating, or when the game 
+					world has reset, respectively. </font></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<p><b>There are also various notification methods at the bottom of the 
+	Critter class. These methods are provided to inform you about the result of 
+	fights, sleeping, etc.<br>
+	Currently the methods do nothing, but you can override these methods in your 
+	Longhorn to be informed of these events. Why might this be useful? You may 
+	want to develop a strategy for future events based on what has happened to 
+	your Longhorn or other Longhorns.</b></p>
+<p><b>Implementation Guidelines:</b></p>
+<p>Download all the required files and add them to your BlueJ or Eclipse 
+	project. The provided GUI and simulation can run even if you haven't 
+	completed all of the required critter classes.</p>
+<p ALIGN="LEFT"></p>
+<font SIZE="3">
+	<p>The simulator runs even if you haven't completed all the critters. The 
+		classes increase in difficulty from </font>
+<font FACE="Courier New,Courier New" SIZE="2">Ant </font><font SIZE="3">to
+</font><font FACE="Courier New,Courier New" SIZE="2">Bird </font><font SIZE="3">
+	to </font><font face="Courier New,Courier New" size="2">Vulture </font>
+<font SIZE="3">to </font><font size="2" face="Courier New,Courier New">Hippo to 
+	Longhorn</font><font SIZE="3">. I suggest doing </font>
+<font FACE="Courier New,Courier New" SIZE="2">Ant </font><font SIZE="3">first. 
+	Look at </font><font FACE="Courier New,Courier New" SIZE="2">Stone.java </font>
+<font SIZE="3">and the lecture/section examples to see the general structure.
+	</p>
+<p>It will be impossible to implement each behavior if you don't have the right 
+	state (instance variables) in your object. As you start writing each class, 
+	spend some time thinking about what <b>
+	<font face="Times New Roman,Times New Roman">instance variables</font></b></font><font FACE="Times New Roman,Times New Roman" SIZE="3"><b>
+		</b></font><font SIZE="3">will be needed to achieve the desired behavior. </p>
+<p>One thing that students in the past have found particularly difficult to 
+	understand is the various </font>
+<font FACE="Times New Roman,Times New Roman" SIZE="3"><b>constructors </b>
+</font><font SIZE="3">for each type of animal. Some of the constructors accept 
+	parameters that guide the behavior of later methods of the animal. It is your 
+	job to </font><font FACE="Times New Roman,Times New Roman" SIZE="3"><b>store 
+		data from these parameters into fields </b></font><font SIZE="3">of the animal 
+			as appropriate, so that it will &quot;remember&quot; the proper information and will be 
+			able to use it later when the animal's other methods are called by the 
+			simulator. </p>
+<p>Test your code </font><font FACE="Times New Roman,Times New Roman" SIZE="3">
+	<b>incrementally</b></font><font SIZE="3">. A critter class will compile even if 
+		you have not written all of the methods (the unwritten ones will use default 
+		behavior). So add one method, run the simulator to see that it works, then add 
+		another. <b>Also you need to check you have correctly implemented the behaviors 
+		of each Critter. It is easy to convince yourself your code is correct because 
+		the Critter does <span class="auto-style1">SOMETHING</span> in the simulator, but you should use the tests in MiniMain.java as well as your own tests to ensure your code is fully correct.</b></p>
+</font>
+<p><b>Style Guidelines and grading:</b></p>
+<p>Some of the points for this assignment will be awarded on the basis of 
+	how much energy and creativity you put into creating an interesting and 
+	effective Longhorn class. Style points will also depend on the basis to simply 
+	and clearly implement each critter's required behavior. As always we expect 
+	you to use good style in your source code.</p>
+<p><b><span style="background-color: #FFFF00">Turn in your files named  
+	</span><span style="background-color: #FFFF00">Ant.java</span><span style="background-color: #FFFF00">, 
+	</span><span style="background-color: #FFFF00">Bird.java</span><span style="background-color: #FFFF00">, 
+	</span><span style="background-color: #FFFF00">Hippo.java</span><span style="background-color: #FFFF00">, 
+	</span><span style="background-color: #FFFF00">Vulture.java</span><span style="background-color: #FFFF00">, 
+	and </span><span style="background-color: #FFFF00">Longhorn.java</span><span style="background-color: #FFFF00"> 
+	via Canvas. Do not turn in any other classes.</span></b></p>
+
+<p><b><span style="background-color: #FFFF00">You must add (and complete) 
+	the standard header </span></b><span style="background-color: #FFFF00"><b>to 
+	each file you turn in. Replace &lt;NAME&gt; with your name.</b></span></p>
+
+<p><span style="background-color: #FFFF00"><b>Standard header:</b></span></p>
+
+<p><b><code>/**<br>
+	* CS312 Assignment 11.<br>
+	*<br>
+	* On MY honor, &lt;NAME&gt;, this programming assignment is MY 
+	own work<br>
+	* and I have not provided this code to any other student.<br>
+	*<br>
+	* Student  name: <br>
+	* UTEID:<br>
+	* email address:<br>
+	* Grader name:<br>
+	* Number of slip days used on this assignment:<br>
+	* <br>
+	*/</code></b></p>
+
+<hr>
+<p><b>Checklist: </b>Did you remember to:</p>
+<ul>
+	<li>review the <a href="index.htm">general assignment requirements</a>?</li>
+	<li>work on the assignment by yourself?</li>
+	<li>ensure your program creates implements the correct behavior for Ant, Bird, 
+		Hippo, and Vulture?</li>
+	<li>Create a unique and effective Longhorn class?</li>
+	<li>ensure you wrote the program using good programming style?</li>
+	<li>ensure your program does not suffer a compile error or runtime error?</li>
+	<li>turn in your Java source code in files named Ant.java, Bird.java, 
+		Hippo.java, Vulture.java, and Longhorn.java via Canvas before 11 pm, <b>
+		<span style="background-color: #FFFF00">Wednesday, December 6</span></b>? </li>
+</ul>
+<p align="center"><a href="../index.htm">Back to the CS 312 homepage.</a></body></html>
