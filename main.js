@@ -1,3 +1,7 @@
+var script = document.createElement('script');
+script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
 //Creates the navbar element and injects it into the page
 //                              -Chris
 /*
@@ -26,7 +30,17 @@ button.appendChild(span);
 //Creates the expanded navbar screen and injects it into the page
 //                              -Chris
 
+$(document).ready(function () {
+	var webAddress = window.location.href;
+	var parent = document.getElementsByTagName("html");
+	var child = document.getElementsByTagName("body");
 
+
+	if (webAddress == "http://www.cs.utexas.edu/~scottm/cs312/") {
+		parent.removeChild(child);
+		parent.append(introToProg);
+	}
+});
 
 //Scroll transition when click on link
 $(document).ready(function () {

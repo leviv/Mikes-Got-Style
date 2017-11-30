@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb');
+
 /* ===============================
     General
 =============================== */
@@ -101,7 +104,6 @@ a {
 
 .nav-list {
 	text-align: left;
-	font-family: 'Teko', sans-serif;
 	position: fixed;
 	display: block;
 	top: 50%;
@@ -133,7 +135,7 @@ a {
 
 .brief {
 	color: #fff;
-	background: #BF5874 !important;
+	background: #333 !important;
 }
 
 .brief:hover {
@@ -149,20 +151,20 @@ a {
 }
 
 .nav-item a:hover {
-	color: #BF5874;
+	color: #333;
 }
 
 .nav-item p {
 	font-size: 25px;
 	margin-bottom: 20px;
 	text-transform: none;
-	border-bottom: 2px solid #BF5874;
+	border-bottom: 2px solid #333;
 }
 
 .nav-item p span {
 	font-weight: 100;
 	font-family: 'Anaheim', sans-serif;
-	color: #BF5874;
+	color: #333;
 	font-size: 45px;
 }
 
@@ -170,11 +172,11 @@ a {
 	font-weight: 100;
 	margin-right: 20px;
 	font-family: 'Anaheim', sans-serif;
-	border-bottom: 2px solid #BF5874;
+	border-bottom: 2px solid #333;
 }
 
 .nav-span-active {
-	color: #BF5874;
+	color: #333;
 }
 
 #nav-expand {
@@ -358,6 +360,7 @@ a {
     animation: box 1s ease-in-out forwards;
     animation-delay: 2s;
 	background: #eee;
+	z-index: 999;
 }
 
 @keyframes box {
@@ -397,7 +400,6 @@ a {
     font-size: 30px;
     text-align: center;
     color: #fff;
-    font-family: sans-serif;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
@@ -464,7 +466,7 @@ a {
 #hero .hero-text {
 	position: absolute;
 	bottom: 50px;
-	z-index: -1;
+	z-index: 0;
 	right: 50px;
 }
 
@@ -492,14 +494,13 @@ html {
 	width: 100%;
 }
 
-body#home {
-	width: auto;
-	margin: auto auto;
-}
-
 body {
-	max-width: 900px;
+	font-family: 'Open Sans', sans-serif;
+	background-image: none !important
+}
+body:not(#home) {
 	margin: 0 auto;
+	max-width: 900px;
 }
 
 @media(max-width:900px) {
@@ -525,9 +526,11 @@ ul, ol  {
 	padding-left: 25px;
 }
 
-body > :first-child {
+body:not(#home) > :first-child {
 	margin-top: 0 !important;
-	background-color: #0f0;
+	background-color: #333;
+	padding: 50px 0;
+	color: white;
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
 	padding-left: calc((100vw - 900px) / 2);
