@@ -4,9 +4,8 @@
   "version": "0.1",
   "content_scripts": [
   {
-    "run_at": "document_end",
     "matches": [
-		"https://www.cs.utexas.edu/~scottm/*"
+		"http://www.cs.utexas.edu/~scottm/*"
     ],
 	  "js": ["jquery-2.1.3.min.js","ui.js","main.js"],
     "css": ["./assets/css/test.css"]
@@ -17,11 +16,7 @@
 		"persistent": false
 	},
     "browser_action": {
-        "default_icon": "favicon.png",
-        "default_popup": "popup.html"
-    },
-    "permissions": [
-        "activeTab"
-    ]
+        "default_icon": "favicon.png"
+    }
     
 }

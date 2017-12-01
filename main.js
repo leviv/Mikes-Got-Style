@@ -1,7 +1,3 @@
-document.getElementsByTagName("body")[0].className = "pretty-site";
-var script = document.createElement('script');
-script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
-script.type = 'text/javascript';
 
 //Creates the navbar element and injects it into the page
 //                              -Chris
@@ -30,16 +26,15 @@ button.appendChild(span);
 */
 //Creates the expanded navbar screen and injects it into the page
 //                              -Chris
-
 $(document).ready(function () {
 	var webAddress = window.location.href;
 	var parent = document.getElementsByTagName("html");
-	var child = document.getElementsByTagName("body");
-
+	var $introToProg = $('<body id=home><section id=nav><button class=\"c-hamburger c-hamburger--htra c-hamburger--htx\"><span>toggle menu</span></button></section><section id=nav-expand><ul class=nav-list><li class=nav-item><p>CS 312 Directory<li class=nav-item><a class=nav-one href=index.html><h2><span class=nav-span-active>01.</span>Startup</h2></a><li class=nav-item><a class=nav-two href=techedu.html><h2><span>02.</span>Syllabus</h2></a><li class=nav-item><a class=nav-three href=global-timeline.html><h2><span>03.</span>Schedule</h2></a><li class=nav-item><a class=nav-four href=ghtsa-timeline.html><h2><span>04.</span>Lab Hours</h2></a><li class=nav-item><a class=nav-five href=about.html><h2><span>05.</span>Assignments</h2></a><li class=\"nav-item brief\"><a class=nav-six href=ar.html><h2><span></span>Go Home</h2></a></ul></section><div class=box><div class=loader align=center><div class=typewriter><h1><span class=red>public static void</span> <span class=black>loadWebsite</span><span class=black>()</span> <span class=black>{}</span></h1><br><br><br></div></div></div><section id=hero><div class=hero-overlay><div class=hero-text><h1><span>Computer Science 312</span></h1><h1><span>Introduction to Programming</span></h1></div></div></section></body>');
 
 	if (webAddress == "http://www.cs.utexas.edu/~scottm/cs312/") {
-		parent.removeChild(child);
-		parent.append(introToProg);
+		$('body').empty();
+		$('body').attr('id', 'home');
+		$('body').append($introToProg);
 	}
 });
 
