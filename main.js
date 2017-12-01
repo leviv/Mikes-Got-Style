@@ -1,7 +1,8 @@
+document.getElementsByTagName("body")[0].className = "pretty-site";
 var script = document.createElement('script');
 script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
 script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
+
 //Creates the navbar element and injects it into the page
 //                              -Chris
 /*

@@ -1,584 +1,667 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb');
-
 /* ===============================
-    General
-=============================== */
+        General
+    =============================== */
 /* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0 | 20110126
-License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    v2.0 | 20110126
+    License: none (public domain)
+    */
+/* line 11, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site {
+  /* HTML5 display-role reset for older browsers */
+  /* ===============================
+        Global
+    =============================== */
+  /* GLOBAL STYLES */
+  /* ===============================
+        Nav
+    =============================== */
+  /* Typography */
+  /* active state, i.e. menu open */
+  /* ===============================
+        Home Page
+    =============================== */
+  /* DEMO-SPECIFIC STYLES */
+  /* The typing effect */
+  /* The typewriter cursor effect */
+  /* ===============================
+        General Styles
+    =============================== */
 }
 
-body { 
-    background-image:none;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
+/* line 12, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site, .pretty-site div, .pretty-site span, .pretty-site applet, .pretty-site object, .pretty-site iframe,
+.pretty-site h1, .pretty-site h2, .pretty-site h3, .pretty-site h4, .pretty-site h5, .pretty-site h6, .pretty-site p, .pretty-site blockquote, .pretty-site pre,
+.pretty-site a, .pretty-site abbr, .pretty-site acronym, .pretty-site address, .pretty-site big, .pretty-site cite, .pretty-site code,
+.pretty-site del, .pretty-site dfn, .pretty-site em, .pretty-site img, .pretty-site ins, .pretty-site kbd, .pretty-site q, .pretty-site s, .pretty-site samp,
+.pretty-site small, .pretty-site strike, .pretty-site strong, .pretty-site sub, .pretty-site sup, .pretty-site tt, .pretty-site var,
+.pretty-site b, .pretty-site u, .pretty-site i, .pretty-site center,
+.pretty-site dl, .pretty-site dt, .pretty-site dd, .pretty-site ol, .pretty-site ul, .pretty-site li,
+.pretty-site fieldset, .pretty-site form, .pretty-site label, .pretty-site legend,
+.pretty-site table, .pretty-site caption, .pretty-site tbody, .pretty-site tfoot, .pretty-site thead, .pretty-site tr, .pretty-site th, .pretty-site td,
+.pretty-site article, .pretty-site aside, .pretty-site canvas, .pretty-site details, .pretty-site embed,
+.pretty-site figure, .pretty-site figcaption, .pretty-site footer, .pretty-site header, .pretty-site hgroup,
+.pretty-site menu, .pretty-site nav, .pretty-site output, .pretty-site ruby, .pretty-site section, .pretty-site summary,
+.pretty-site time, .pretty-site mark, .pretty-site audio, .pretty-site video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
 }
 
-/* ===============================
-    Global
-=============================== */
-/* GLOBAL STYLES */
-
-ul {
-	list-style: none;
+/* line 31, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site article, .pretty-site aside, .pretty-site details, .pretty-site figcaption, .pretty-site figure,
+.pretty-site footer, .pretty-site header, .pretty-site hgroup, .pretty-site menu, .pretty-site nav, .pretty-site section {
+  display: block;
 }
 
-a {
-	text-decoration: none;
+/* line 35, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site {
+  line-height: 1;
 }
 
-.loader {
-    background: #eee;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    height:100%;
+/* line 38, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site ul {
+  list-style: none;
 }
 
-
-/* ===============================
-	Nav
-=============================== */
-
-@media(max-width:768px) {
-	.nav-item p {
-		display: none;
-	}
-
-	.nav-list {
-		top: 30% !important;
-		left: -100%;
-	}
-
-	.nav-list h2 {
-		font-size: .5em
-	}
-}
-/* Typography */
-
-.nav-list {
-	text-align: left;
-	position: fixed;
-	display: block;
-	top: 50%;
-	left: -100%;
-	transform: translateY(-50%);
-	padding: 0 0 0 8%;
-	transition: all 1.2s;
-	-webkit-transition: all 1.2s;
-	-ms-transition: all 1.2s;
-	-moz-transition: all 1.2s;
-	-o-transition: all 1.2s;
+/* line 41, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site blockquote, .pretty-site q {
+  quotes: none;
 }
 
-.nav-list h2 {
-	text-align: left !important;
+/* line 44, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site blockquote:before, .pretty-site blockquote:after,
+.pretty-site q:before, .pretty-site q:after {
+  content: '';
+  content: none;
 }
 
-.nav-item {
-	font-size: 30px;
-	line-height: 70px;
-	font-weight: 800;
-	text-transform: uppercase;
-	letter-spacing: 1px;
+/* line 49, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.nav-item a {
-	color: #fff;
+/* line 54, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site {
+  background-image: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
 }
 
-.brief {
-	color: #fff;
-	background: #333 !important;
+/* line 65, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site ul {
+  list-style: none;
 }
 
-.brief:hover {
-	background: #fff !important;
-	-webkit-transition: background .5s;
-	-ms-transition: background .5s;
-	-moz-transition: background .5s;
-	-o-transition: background .5s;
+/* line 69, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site a {
+  text-decoration: none;
 }
 
-.brief h2 span {
-	border-bottom: 2px solid #fff !important;
+/* line 73, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .loader {
+  background: #eee;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.nav-item a:hover {
-	color: #333;
+@media (max-width: 768px) {
+  /* line 90, C:/Users/chris/Desktop/sass/test.scss */
+  .pretty-site .nav-item p {
+    display: none;
+  }
+  /* line 94, C:/Users/chris/Desktop/sass/test.scss */
+  .pretty-site .nav-list {
+    top: 30% !important;
+    left: -100%;
+  }
+  /* line 99, C:/Users/chris/Desktop/sass/test.scss */
+  .pretty-site .nav-list h2 {
+    font-size: .5em;
+  }
 }
 
-.nav-item p {
-	font-size: 25px;
-	margin-bottom: 20px;
-	text-transform: none;
-	border-bottom: 2px solid #333;
+/* line 105, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-list {
+  text-align: left;
+  position: fixed;
+  display: block;
+  top: 50%;
+  left: -100%;
+  transform: translateY(-50%);
+  padding: 0 0 0 8%;
+  transition: all 1.2s;
+  -webkit-transition: all 1.2s;
+  -ms-transition: all 1.2s;
+  -moz-transition: all 1.2s;
+  -o-transition: all 1.2s;
 }
 
-.nav-item p span {
-	font-weight: 100;
-	font-family: 'Anaheim', sans-serif;
-	color: #333;
-	font-size: 45px;
+/* line 120, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-list h2 {
+  text-align: left !important;
 }
 
-.nav-item h2 span {
-	font-weight: 100;
-	margin-right: 20px;
-	font-family: 'Anaheim', sans-serif;
-	border-bottom: 2px solid #333;
+/* line 124, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-item {
+  font-size: 30px;
+  line-height: 70px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.nav-span-active {
-	color: #333;
+/* line 132, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-item a {
+  color: #fff;
 }
 
-#nav-expand {
-	background: #5c5c5c !important;
-	position: fixed;
-	background-image: url(../img/nav.JPG);
-	background-attachment: fixed;
-	background-size: cover;
-	height: 100%;
-	width: 100%;
-	left: -100%;
-	color: #fff;
-	display: inherit;
-	z-index: 99999999;
-	-webkit-transition: background .5s;
-	-ms-transition: background .5s;
-	-moz-transition: background .5s;
-	-o-transition: background .5s;
+/* line 136, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .brief {
+  color: #fff;
+  background: #333 !important;
 }
 
-.c-hamburger {
-	display: block;
-	visibility: hidden;
-	z-index: 999999999;
-	position: fixed;
-	width: 70px;
-	height: 70px;
-	text-indent: -99909px;
-	border: none;
-	cursor: pointer;
-	transition: background 0.3s;
-	right: calc(100% - 70px);
-	transform: rotate(0deg);
-	transition: all 1.2s;
-	-webkit-transition: all 1.2s;
-	-ms-transition: all 1.2s;
-	-moz-transition: all 1.2s;
-	-o-transition: all 1.2s;
-	animation: showNav 3.0s ease-in-out forwards;
+/* line 141, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .brief:hover {
+  background: #fff !important;
+  -webkit-transition: background .5s;
+  -ms-transition: background .5s;
+  -moz-transition: background .5s;
+  -o-transition: background .5s;
+}
+
+/* line 149, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .brief h2 span {
+  border-bottom: 2px solid #fff !important;
+}
+
+/* line 153, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-item a:hover {
+  color: #333;
+}
+
+/* line 157, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-item p {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-transform: none;
+  border-bottom: 2px solid #333;
+}
+
+/* line 164, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-item p span {
+  font-weight: 100;
+  font-family: 'Anaheim', sans-serif;
+  color: #333;
+  font-size: 45px;
+}
+
+/* line 171, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-item h2 span {
+  font-weight: 100;
+  margin-right: 20px;
+  font-family: 'Anaheim', sans-serif;
+  border-bottom: 2px solid #333;
+}
+
+/* line 178, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .nav-span-active {
+  color: #333;
+}
+
+/* line 182, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site #nav-expand {
+  background: #5c5c5c !important;
+  position: fixed;
+  background-image: url(../img/nav.JPG);
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  color: #fff;
+  display: inherit;
+  z-index: 99999999;
+  -webkit-transition: background .5s;
+  -ms-transition: background .5s;
+  -moz-transition: background .5s;
+  -o-transition: background .5s;
+}
+
+/* line 200, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger {
+  display: block;
+  visibility: hidden;
+  z-index: 999999999;
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  text-indent: -99909px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  right: calc(100% - 70px);
+  transform: rotate(0deg);
+  transition: all 1.2s;
+  -webkit-transition: all 1.2s;
+  -ms-transition: all 1.2s;
+  -moz-transition: all 1.2s;
+  -o-transition: all 1.2s;
+  animation: showNav 3.0s ease-in-out forwards;
 }
 
 @keyframes showNav {
-	0% { 
-		visibility: hidden;
-	}
-	99% { 
-		visibility: hidden;
-	}
-	100% {
-		visibility: visible;
-	}
+  0% {
+    visibility: hidden;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }
 
-.c-hamburger:focus {
-	outline: none;
-}
-.c-hamburger span {
-	display: block;
-	position: absolute;
-	top: 34px;
-	left: 13px;
-	right: 13px;
-	height: 3px;
-	background: white;
+/* line 233, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger:focus {
+  outline: none;
 }
 
-.c-hamburger span::before,
-.c-hamburger span::after {
-	position: absolute;
-	display: block;
-	left: 0;
-	width: 100%;
-	height: 3px;
-	background-color: #fff;
-	content: "";
+/* line 236, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 34px;
+  left: 13px;
+  right: 13px;
+  height: 3px;
+  background: white;
 }
 
-.c-hamburger span::before {
-	top: -10px;
+/* line 246, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger span::before,
+.pretty-site .c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  content: "";
 }
 
-.c-hamburger span::after {
-	bottom: -10px;
+/* line 257, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger span::before {
+  top: -10px;
 }
 
-.c-hamburger--htx {
-	background-color: #2a2929;
+/* line 261, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger span::after {
+  bottom: -10px;
 }
 
-.c-hamburger--htx:hover {
-	background-color: #2a2929;
+/* line 265, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx {
+  background-color: #2a2929;
 }
 
-.c-hamburger--htx span {
-	transition: background 0s 0.3s;
+/* line 269, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx:hover {
+  background-color: #2a2929;
 }
 
-
-.c-hamburger--htx span::before {
-	transition-property: top, transform;
+/* line 273, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx span {
+  transition: background 0s 0.3s;
 }
 
-.c-hamburger--htx span::after {
-	transition-property: bottom, transform;
+/* line 278, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx span::before {
+  transition-property: top, transform;
 }
 
-/* active state, i.e. menu open */
-.c-hamburger--htx.is-active span {
-	background: none;
+/* line 282, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx span::after {
+  transition-property: bottom, transform;
 }
 
-.c-hamburger--htx.is-active span::before {
-	top: 0;
-	transform: rotate(45deg);
+/* line 287, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx.is-active span {
+  background: none;
 }
 
-.c-hamburger--htx.is-active span::after {
-	bottom: 0;
-	transform: rotate(-45deg);
+/* line 291, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
 }
 
-.c-hamburger--htx.is-active span::before,
-.c-hamburger--htx.is-active span::after {
-	transition-delay: 0s, 0.3s;
+/* line 296, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
 }
 
-.c-hamburger--htra span::before {
-	transition: all .2s !important;
+/* line 301, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx.is-active span::before,
+.pretty-site .c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s;
 }
 
-.c-hamburger--htra span::after {
-	transition: all .2s !important;
+/* line 306, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htra span::before {
+  transition: all .2s !important;
 }
 
-.c-hamburger--htra span {
-	transition: all .2s !important;
+/* line 310, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htra span::after {
+  transition: all .2s !important;
 }
 
-.c-hamburger--htra span::before,
-.c-hamburger--htra span::after {
-	transition: all .2s !important;
+/* line 314, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htra span {
+  transition: all .2s !important;
 }
 
-.c-hamburger--htx:hover span {
-	background: #fff;
+/* line 318, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htra span::before,
+.pretty-site .c-hamburger--htra span::after {
+  transition: all .2s !important;
 }
 
-.c-hamburger--htra:hover span::before {
-	transform-origin: top left !important;
-	top: 0 !important;
-	transform: translateX(-3px) translateY(1.5px) rotate(-45deg) !important;
-	transition: all .3s !important;
+/* line 323, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htx:hover span {
+  background: #fff;
 }
 
-.c-hamburger--htra:hover span::after {
-	transform-origin: bottom left !important;
-	bottom: 0 !important;
-	transform: translateX(-3px) translateY(-1.5px) rotate(45deg) !important;
-	transition: all .3s !important;
+/* line 327, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htra:hover span::before {
+  transform-origin: top left !important;
+  top: 0 !important;
+  transform: translateX(-3px) translateY(1.5px) rotate(-45deg) !important;
+  transition: all .3s !important;
 }
 
-.c-hamburger--htra:hover span {
-	transform: rotate(180deg) !important;
+/* line 334, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htra:hover span::after {
+  transform-origin: bottom left !important;
+  bottom: 0 !important;
+  transform: translateX(-3px) translateY(-1.5px) rotate(45deg) !important;
+  transition: all .3s !important;
 }
 
-.c-hamburger--htra:hover span::before,
-.c-hamburger--htra:hover span::after {
-	width: 50% !important;
-	transition: all .3s !important;
+/* line 341, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htra:hover span {
+  transform: rotate(180deg) !important;
 }
 
-/* ===============================
-	Home Page
-=============================== */
+/* line 345, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .c-hamburger--htra:hover span::before,
+.pretty-site .c-hamburger--htra:hover span::after {
+  width: 50% !important;
+  transition: all .3s !important;
+}
 
-.box {
-    position: fixed;
-    width: calc(100% - 70px);
-    height: calc(100vh - 70px);
-    border: 35px solid #2a2929;
-    animation: box 1s ease-in-out forwards;
-    animation-delay: 2s;
-	background: #eee;
-	z-index: 999;
+/* line 355, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .box {
+  position: fixed;
+  width: calc(100% - 70px);
+  height: calc(100vh - 70px);
+  border: 35px solid #2a2929;
+  animation: box 1s ease-in-out forwards;
+  animation-delay: 2s;
+  background: #eee;
+  z-index: 999;
 }
 
 @keyframes box {
-    0% {
-        width: calc(100% - 70px);
-        height: calc(100vh - 70px);
-        top: 0%;
-        left: 0%;
-    }
-    50% {
-        width: 0px;
-        height: 0px;
-        top: 0%;
-        left: 0%;
-    }
-    
-    100% {
-        width: 0px;
-        height: 0px;
-        top: 0%;
-        left: 0%;
-		visibility: hidden;
-    }
+  0% {
+    width: calc(100% - 70px);
+    height: calc(100vh - 70px);
+    top: 0%;
+    left: 0%;
+  }
+  50% {
+    width: 0px;
+    height: 0px;
+    top: 0%;
+    left: 0%;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    top: 0%;
+    left: 0%;
+    visibility: hidden;
+  }
 }
 
-.typewriter {
-    height: 100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    height:90%;
+/* line 389, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .typewriter {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
 }
 
-/* DEMO-SPECIFIC STYLES */
-.typewriter h1 {
-    font-size: 30px;
-    text-align: center;
-    color: #fff;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    opacity: 1;
-    animation: 
-        typing 7.0s steps(50, end),
-        blink-caret 1.5s step-end;
+/* line 399, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .typewriter h1 {
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  opacity: 1;
+  animation: typing 7s steps(50, end), blink-caret 1.5s step-end;
 }
 
-/* The typing effect */
 @keyframes typing {
-    0% { 
-        width: 0; 
-		visibility: visible;
-		opacity: 1;
-		font-size: 30px;
-    }
-    50% { 
-        width: 100%;
-		visibility: visible;
-		opacity: 1;
-		font-size: 30px;
-    }
-    100% {
-		visibility: hidden;
-		opacity: 0;
-		font-size: 1px;
-    }
+  0% {
+    width: 0;
+    visibility: visible;
+    opacity: 1;
+    font-size: 30px;
+  }
+  50% {
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+    font-size: 30px;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1px;
+  }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
-    from, to { 
-        border-color: transparent;
-        border-right: .1em solid #000; 
-    }
-    50% { border-color: #000;
-        border-right: .1em solid #000; }
+  from, to {
+    border-color: transparent;
+    border-right: .1em solid #000;
+  }
+  50% {
+    border-color: #000;
+    border-right: .1em solid #000;
+  }
 }
 
-.red {
-    color: #a82b5b;
+/* line 445, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .red {
+  color: #a82b5b;
 }
 
-.black {
-    color: #000;
+/* line 449, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .black {
+  color: #000;
 }
 
-#hero {
-	width: 100%;
-	background: url('http://image.vsco.co/1/5692f8394e80513625973/569466f3ed07f3285c44f56c/1024x768/vsco_011116.jpg');
-	background-size: cover;
+/* line 453, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site #hero {
+  width: 100%;
+  background: url("http://image.vsco.co/1/5692f8394e80513625973/569466f3ed07f3285c44f56c/1024x768/vsco_011116.jpg");
+  background-size: cover;
 }
 
-.hero-overlay {
-	height: 100%;
-	background: rgba(255, 255, 255, 0.2);
-	background-image: url('');
-	background-repeat: repeat
+/* line 459, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .hero-overlay {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  background-image: url("");
+  background-repeat: repeat;
 }
 
-#hero .hero-text {
-	position: absolute;
-	bottom: 50px;
-	z-index: 0;
-	right: 50px;
+/* line 466, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site #hero .hero-text {
+  position: absolute;
+  bottom: 50px;
+  z-index: 0;
+  right: 50px;
 }
 
-#hero h1 {
-	width: auto;
-	text-transform: uppercase;
-	text-align: right;
-	font-size: 50px;
-	margin: 40px 0;
-	color: fff;
-	
+/* line 473, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site #hero h1 {
+  width: auto;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 50px;
+  margin: 40px 0;
+  color: fff;
 }
 
-#hero h1 span {
-	background: #000;
-	padding: 5px 10px;
+/* line 483, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site #hero h1 span {
+  background: #000;
+  padding: 5px 10px;
 }
 
-/* ===============================
-	General Styles
-=============================== */
-
-html { 
-	height: 100%;
-	width: 100%;
+/* line 492, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site {
+  height: 100%;
+  width: 100%;
 }
 
-body {
-	font-family: 'Open Sans', sans-serif;
-	background-image: none !important
-}
-body:not(#home) {
-	margin: 0 auto;
-	max-width: 900px;
+/* line 497, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site {
+  font-family: 'Open Sans', sans-serif;
+  background-image: none !important;
 }
 
-@media(max-width:900px) {
-	body{
-		width: 95%;
-	}
-	table {
-		width: 100%;
-	}
+/* line 501, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site:not(#home) {
+  margin: 0 auto;
+  max-width: 900px;
 }
 
-p {
-	margin: 15px 0;
-	line-height: 1.5em;
+@media (max-width: 900px) {
+  /* line 507, C:/Users/chris/Desktop/sass/test.scss */
+  .pretty-site {
+    width: 95%;
+  }
+  /* line 510, C:/Users/chris/Desktop/sass/test.scss */
+  .pretty-site table {
+    width: 100%;
+  }
 }
 
-li {
-	margin: 7px 0;
-	line-height: 1.2em;
+/* line 515, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site p {
+  margin: 15px 0;
+  line-height: 1.5em;
 }
 
-ul, ol  {
-	padding-left: 25px;
+/* line 520, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site li {
+  margin: 7px 0;
+  line-height: 1.2em;
 }
 
-body:not(#home) > :first-child {
-	margin-top: 0 !important;
-	background-color: #333;
-	padding: 50px 0;
-	color: white;
-	width: 100vw;
-	margin-left: calc(-50vw + 50%);
-	padding-left: calc((100vw - 900px) / 2);
-	position: relative;
-	border: none;
-	text-align: left;	
+/* line 525, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site ul, .pretty-site ol {
+  padding-left: 25px;
 }
 
-a {
-	background-size: 100% 200%;
-	background-position: 0% 0%;
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #292929; 50%);
-	transition: all .5s;
-	-webkit-transition: all .5s;
-	text-decoration: none;
-	overflow: hidden;
-	color: #0474af;
+/* line 529, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site:not(#home) > :first-child {
+  margin-top: 0 !important;
+  background-color: #333;
+  padding: 50px 0;
+  color: white;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: calc((100vw - 900px) / 2);
+  position: relative;
+  border: none;
+  text-align: left;
 }
 
-a:hover {
-	color: #292929;
-	background-position: 0% -195%;
-	text-decoration: none;
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #292929 50%)
+/* line 542, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site a {
+  background-size: 100% 200%;
+  background-position: 0% 0%;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #292929, 50%);
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  text-decoration: none;
+  overflow: hidden;
+  color: #0474af;
 }
 
-table {
-	box-shadow: 0px 0px 20px  #8b8a8a;
-	margin: 15px auto;
+/* line 553, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site a:hover {
+  color: #292929;
+  background-position: 0% -195%;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #292929 50%);
 }
 
-table tr{
-	border-bottom: 1px solid #333;	
+/* line 560, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site table {
+  box-shadow: 0px 0px 20px  #8b8a8a;
+  margin: 15px auto;
 }
 
-tr:last-child {
-	border-bottom: 0px solid #fff !important;
+/* line 565, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site table tr {
+  border-bottom: 1px solid #333;
 }
 
-table tr:nth-child(2n) {
-	background: #e3e3e3;
+/* line 569, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site tr:last-child {
+  border-bottom: 0px solid #fff !important;
 }
 
-table td {
-	padding: 8px;
-	
+/* line 573, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site table tr:nth-child(2n) {
+  background: #e3e3e3;
 }
 
-code  {
-	font-family: monospace;
+/* line 577, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site table td {
+  padding: 8px;
 }
+
+/* line 582, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site code {
+  font-family: monospace;
+}
+
+/*# sourceMappingURL=D:/Mikes-Got-Style-master (5)/Mikes-Got-Style-master/assets/css/test.map */
