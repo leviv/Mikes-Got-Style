@@ -63,7 +63,7 @@ body {
 /* GLOBAL STYLES */
 
 ul {
-	list-style: none;
+	list-style: square;
 }
 
 a {
@@ -452,7 +452,7 @@ a {
 
 #hero {
 	width: 100%;
-	background: url('http://image.vsco.co/1/5692f8394e80513625973/569466f3ed07f3285c44f56c/1024x768/vsco_011116.jpg');
+	background: url('https://image.vsco.co/1/5692f8394e80513625973/569466f3ed07f3285c44f56c/1024x768/vsco_011116.jpg');
 	background-size: cover;
 }
 
@@ -517,26 +517,37 @@ p {
 	line-height: 1.5em;
 }
 
+font {
+	line-height: 2em;
+}
+
 li {
 	margin: 7px 0;
 	line-height: 1.2em;
 }
 
 ul, ol  {
-	padding-left: 25px;
+	padding-left: 35px;
 }
 
-body:not(#home) > :first-child {
+body:not(#home) > :first-child,
+body:not(.vsc-initialized) > :first-child {
 	margin-top: 0 !important;
 	background-color: #333;
 	padding: 50px 0;
 	color: white;
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
-	padding-left: calc((100vw - 900px) / 2);
+	
 	position: relative;
 	border: none;
 	text-align: left;	
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+body:not(#home) > :first-child > :first-child {
+	padding-left: calc((100vw - 900px) / 2);
 }
 
 a {
@@ -557,13 +568,17 @@ a:hover {
 	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #292929 50%)
 }
 
-table {
-	box-shadow: 0px 0px 20px  #8b8a8a;
+img {
+	display: block;
 	margin: 15px auto;
 }
 
-table tr{
-	border-bottom: 1px solid #333;	
+table {
+	box-shadow: 0px 3px 10px  #cbcbcb;
+	margin: 15px auto;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	width: 100%;
 }
 
 tr:last-child {
@@ -571,7 +586,11 @@ tr:last-child {
 }
 
 table tr:nth-child(2n) {
-	background: #e3e3e3;
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #e3e3e3 , #f8f8f8); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #e3e3e3, #f8f8f8); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #e3e3e3, #f8f8f8); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #e3e3e3 , #f8f8f8); /* Standard syntax */
 }
 
 table td {

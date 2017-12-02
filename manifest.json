@@ -5,14 +5,15 @@
   "content_scripts": [
   {
     "matches": [
-		"http://www.cs.utexas.edu/~scottm/*"
+		"http://www.cs.utexas.edu/~scottm/*",
+		"https://www.cs.utexas.edu/~scottm/*"
     ],
-	  "js": ["jquery-2.1.3.min.js","ui.js","main.js"],
+	  "js": ["jquery.js","ui.js","main.js"],
     "css": ["./assets/css/test.css"]
   }
   ],
 	"background": {
-		"scripts": ["jquery-2.1.3.min.js","ui.js","main.js"],
+		"scripts": ["jquery.js","ui.js","main.js"],
 		"persistent": false
 	},
     "browser_action": {
