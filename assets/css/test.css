@@ -195,11 +195,16 @@ a {
 	-ms-transition: background .5s;
 	-moz-transition: background .5s;
 	-o-transition: background .5s;
+	list-style: none !important;
+}
+
+#nav-expand ul {
+	list-style: none !important;
 }
 
 .c-hamburger {
+	list-style: none !important;
 	display: block;
-	visibility: hidden;
 	z-index: 999999999;
 	position: fixed;
 	width: 70px;
@@ -215,7 +220,12 @@ a {
 	-ms-transition: all 1.2s;
 	-moz-transition: all 1.2s;
 	-o-transition: all 1.2s;
+
+}
+
+#home .c-hamburger {
 	animation: showNav 3.0s ease-in-out forwards;
+	visibility: hidden;
 }
 
 @keyframes showNav {
@@ -264,6 +274,8 @@ a {
 
 .c-hamburger--htx {
 	background-color: #2a2929;
+	border: solid 1px #eee;
+	border-radius: 0px; !important;
 }
 
 .c-hamburger--htx:hover {
@@ -313,6 +325,8 @@ a {
 
 .c-hamburger--htra span {
 	transition: all .2s !important;
+	transform: rotate(180deg) !important;
+
 }
 
 .c-hamburger--htra span::before,
@@ -336,10 +350,6 @@ a {
 	bottom: 0 !important;
 	transform: translateX(-3px) translateY(-1.5px) rotate(45deg) !important;
 	transition: all .3s !important;
-}
-
-.c-hamburger--htra:hover span {
-	transform: rotate(180deg) !important;
 }
 
 .c-hamburger--htra:hover span::before,
@@ -488,7 +498,8 @@ a {
 /* ===============================
 	General Styles
 =============================== */
-
+html, body {
+}
 html { 
 	height: 100%;
 	width: 100%;
@@ -530,15 +541,15 @@ ul, ol  {
 	padding-left: 35px;
 }
 
-body:not(#home) > :first-child,
-body:not(.vsc-initialized) > :first-child {
+body:not(#home) > :nth-child(3),
+body:not(.vsc-initialized) > :nth-child(3) {
 	margin-top: 0 !important;
 	background-color: #333;
-	padding: 50px 0;
+	padding: 76px 0;
 	color: white;
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
-	
+	padding-left: calc((100vw - 900px) / 2);
 	position: relative;
 	border: none;
 	text-align: left;	
@@ -546,8 +557,7 @@ body:not(.vsc-initialized) > :first-child {
 	-webkit-border-radius: 0px;
 }
 
-body:not(#home) > :first-child > :first-child {
-	padding-left: calc((100vw - 900px) / 2);
+body:not(#home) > :nth-child(3) > :first-child {
 }
 
 a {
