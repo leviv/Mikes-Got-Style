@@ -1,38 +1,13 @@
 
-//Creates the navbar element and injects it into the page
-//                              -Chris
-/*
- * 
- * 
- * 
- * I'm commenting this out for now while I work on the page 
- * because it's creating an element when the element is already
- * there
- * 
- * Feel free to uncomment if you need
- * 
- * 
- * 
- * 
-var navbar = document.createElement("section");
-var button = document.createElement("button");
-var span = document.createElement("span");
-span.innerHTML = "Toggle Menu";
-button.className = "c-hamburger c-hamburger--htx c-hamburger--htra"
-document.body.appendChild(navbar);
-navbar.id = "nav";
-navbar.appendChild(button);
-button.appendChild(span);
-*/
-//Creates the expanded navbar screen and injects it into the page
-//                              -Chris
+
 $(document).ready(function () {
 	var webAddress = window.location.href;
 	var parent = document.getElementsByTagName("html");
 
 	var $introToProg = $('<body id=home><div class=box><div class=loader align=center><div class=typewriter><h1><span class=red>public static void</span> <span class=black>loadWebsite</span><span class=black>()</span> <span class=black>{}</span></h1><br><br><br></div></div></div><section id=hero><div class=hero-overlay><div class=hero-text><h1><span>Computer Science 312</span></h1><h1><span>Introduction to Programming</span></h1></div></div></section><script></body>');
-	var $navCode = $('<section id=nav><button class=\"c-hamburger c-hamburger--htra c-hamburger--htx\"><span>toggle menu</span></button></section><section id=nav-expand><ul class=nav-list><li class=nav-item><p>CS 312 Directory<li class=nav-item><a class=nav-one href=index.html><h2><span class=nav-span-active>01.</span>Startup</h2></a><li class=nav-item><a class=nav-two href=techedu.html><h2><span>02.</span>Syllabus</h2></a><li class=nav-item><a class=nav-three href=global-timeline.html><h2><span>03.</span>Schedule</h2></a><li class=nav-item><a class=nav-four href=ghtsa-timeline.html><h2><span>04.</span>Lab Hours</h2></a><li class=nav-item><a class=nav-five href=about.html><h2><span>05.</span>Assignments</h2></a><li class=\"nav-item brief\"><a class=nav-six href=ar.html><h2><span></span>Go Home</h2></a></ul></section>');
-
+	var $navCode = $('<section id="nav"> <button class="c-hamburger c-hamburger--htx c-hamburger--htra"> <span>toggle menu</span> </button> </section><!-- nav --> <section id="nav-expand"> <ul class="nav-list"> <li class="nav-item"><p>CS 312 Directory</p></li> <!-- nav-item --><div class="col col1"> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/handouts/startup.htm" class="nav-one"> <h2><span class="">01.</span>Startup</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/syllabus.htm" class="nav-two"> <h2><span>02.</span>Syllabus</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/schedule.htm" class="nav-three"> <h2><span class="">03.</span>Schedule</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/labHours.htm" class="nav-four"> <h2><span class="">04.</span>Lab Hours</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/assignments/index.htm" class="nav-five"><h2><span>05.</span>Assignments</h2></a> </li><!-- nav-item --> </div> <div class="col col2"> <li class="nav-item"> <a href="https://piazza.com/class/j6f6hpuiaja57q" class="nav-one"> <h2><span class="">06.</span>Piazza</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="https://utexas.instructure.com/" class="nav-two"> <h2><span>07.</span>Canvas (Grades, Due Dates)</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/testStudyMaterials.htm" class="nav-three"> <h2><span class="">08.</span>Test Review Materials</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="https://practiceit.cs.washington.edu/" class="nav-four"> <h2><span class="">09.</span>Practice It Problems</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="http://docs.oracle.com/javase/8/docs/api/" class="nav-five"><h2><span>10.</span>Java documentation</h2></a> </li><!-- nav-item --> </div> <div class="col col3"> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/handouts/helpSources.htm" class="nav-one"> <h2><span class="">11.</span>Where to Get Help</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/software.htm" class="nav-two"> <h2><span>12.</span>Software</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="https://apps.cs.utexas.edu/udb/newaccount" class="nav-three"> <h2><span class="">13.</span>Lab Accounts</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="../cs314/handouts/PracticeProblems.htm" class="nav-four"> <h2><span class="">14.</span>More Practice Problems and Links</h2> </a> </li><!-- nav-item --> <li class="nav-item"> <a href="http://www.cs.utexas.edu/~scottm/cs312/codingSamples.htm" class="nav-five"><h2><span>15.</span>Coding Samples</h2></a> </li><!-- nav-item --> </div> <div class="col col3"> <li class="nav-item brief"> <a href="http://www.cs.utexas.edu/~scottm/cs312/" class="nav-six"> <h2><span></span>Go Home</h2> </a> </li> </div> </ul><!-- nav-list --> </section><!-- nav-expand -->');
+	
+	// If the web address is any one of these variations
 	if (webAddress == "http://www.cs.utexas.edu/~scottm/cs312/"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs312/"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs312"
@@ -46,6 +21,7 @@ $(document).ready(function () {
 	}
 	$('body').prepend($navCode);	
 });
+
 
 //Scroll transition when click on link
 $(document).ready(function () {
@@ -135,9 +111,4 @@ $(document).ready(function(){
 		}
 
 	})();
-});
-
-
-$("#nav").click(function() {
-	
 });
