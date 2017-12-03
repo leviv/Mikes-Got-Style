@@ -1,3 +1,4 @@
+
 function hello() {
   chrome.tabs.executeScript({
     file: 'toggle.js'
@@ -6,6 +7,7 @@ function hello() {
 
 window.onload = function(){
     var button = document.getElementById('button');
+    button.style.fill = "red";
     button.onmousedown = handleClick;
 };
 
