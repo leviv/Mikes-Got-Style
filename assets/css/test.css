@@ -8,7 +8,6 @@
     License: none (public domain)
     */
 /* line 11, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site {
   /* HTML5 display-role reset for older browsers */
   /* ===============================
         Global
@@ -31,7 +30,7 @@
 }
 
 /* line 12, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site, .pretty-site div, .pretty-site span, .pretty-site applet, .pretty-site object, .pretty-site iframe,
+.pretty-site, .pretty-site, .pretty-site div, .pretty-site span, .pretty-site applet, .pretty-site object, .pretty-site iframe,
 .pretty-site h1, .pretty-site h2, .pretty-site h3, .pretty-site h4, .pretty-site h5, .pretty-site h6, .pretty-site p, .pretty-site blockquote, .pretty-site pre,
 .pretty-site a, .pretty-site abbr, .pretty-site acronym, .pretty-site address, .pretty-site big, .pretty-site cite, .pretty-site code,
 .pretty-site del, .pretty-site dfn, .pretty-site em, .pretty-site img, .pretty-site ins, .pretty-site kbd, .pretty-site q, .pretty-site s, .pretty-site samp,
@@ -85,7 +84,7 @@
 }
 
 /* line 54, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site {
+.pretty-site{
   background-image: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
@@ -93,7 +92,7 @@
 
 /* line 65, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site ul {
-  list-style: none;
+  list-style: square;
 }
 
 /* line 69, C:/Users/chris/Desktop/sass/test.scss */
@@ -116,7 +115,7 @@
 @media (max-width: 768px) {
   /* line 90, C:/Users/chris/Desktop/sass/test.scss */
   .pretty-site .nav-item p {
-    display: none;
+    padding-top: 45px !important;
   }
   /* line 94, C:/Users/chris/Desktop/sass/test.scss */
   .pretty-site .nav-list {
@@ -127,9 +126,24 @@
   .pretty-site .nav-list h2 {
     font-size: .5em;
   }
+  /* line 103, C:/Users/chris/Desktop/sass/test.scss */
+  .pretty-site #nav-expand {
+    overflow: scroll !important;
+  }
+  /* line 106, C:/Users/chris/Desktop/sass/test.scss */
+  .pretty-site .nav-item {
+    line-height: 20px !important;
+  }
+  /* line 110, C:/Users/chris/Desktop/sass/test.scss */
+  .pretty-site .col {
+    float: none !important;
+    display: inline-block;
+    width: 100% !important;
+    padding-right: 0px !important;
+  }
 }
 
-/* line 105, C:/Users/chris/Desktop/sass/test.scss */
+/* line 119, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-list {
   text-align: left;
   position: fixed;
@@ -145,32 +159,32 @@
   -o-transition: all 1.2s;
 }
 
-/* line 120, C:/Users/chris/Desktop/sass/test.scss */
+/* line 134, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-list h2 {
   text-align: left !important;
 }
 
-/* line 124, C:/Users/chris/Desktop/sass/test.scss */
+/* line 138, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-item {
-  font-size: 30px;
+  font-size: 20px;
   line-height: 70px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* line 132, C:/Users/chris/Desktop/sass/test.scss */
+/* line 146, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-item a {
   color: #fff;
 }
 
-/* line 136, C:/Users/chris/Desktop/sass/test.scss */
+/* line 150, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .brief {
   color: #fff;
   background: #333 !important;
 }
 
-/* line 141, C:/Users/chris/Desktop/sass/test.scss */
+/* line 155, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .brief:hover {
   background: #fff !important;
   -webkit-transition: background .5s;
@@ -179,25 +193,27 @@
   -o-transition: background .5s;
 }
 
-/* line 149, C:/Users/chris/Desktop/sass/test.scss */
+/* line 163, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .brief h2 span {
   border-bottom: 2px solid #fff !important;
 }
 
-/* line 153, C:/Users/chris/Desktop/sass/test.scss */
+/* line 167, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-item a:hover {
   color: #333;
 }
 
-/* line 157, C:/Users/chris/Desktop/sass/test.scss */
+/* line 171, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-item p {
   font-size: 25px;
   margin-bottom: 20px;
   text-transform: none;
   border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+  width: 95%;
 }
 
-/* line 164, C:/Users/chris/Desktop/sass/test.scss */
+/* line 180, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-item p span {
   font-weight: 100;
   font-family: 'Anaheim', sans-serif;
@@ -205,7 +221,7 @@
   font-size: 45px;
 }
 
-/* line 171, C:/Users/chris/Desktop/sass/test.scss */
+/* line 187, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-item h2 span {
   font-weight: 100;
   margin-right: 20px;
@@ -213,12 +229,12 @@
   border-bottom: 2px solid #333;
 }
 
-/* line 178, C:/Users/chris/Desktop/sass/test.scss */
+/* line 194, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-span-active {
   color: #333;
 }
 
-/* line 182, C:/Users/chris/Desktop/sass/test.scss */
+/* line 198, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site #nav-expand {
   background: #5c5c5c !important;
   position: fixed;
@@ -235,12 +251,27 @@
   -ms-transition: background .5s;
   -moz-transition: background .5s;
   -o-transition: background .5s;
+  list-style: none !important;
 }
 
-/* line 200, C:/Users/chris/Desktop/sass/test.scss */
+/* line 217, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site #nav-expand ul {
+  list-style: none !important;
+  width: 95%;
+}
+
+/* line 222, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site .col {
+  float: left;
+  display: inline-block;
+  width: calc(33.3333% - 25px);
+  padding-right: 25px;
+}
+
+/* line 229, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger {
+  list-style: none !important;
   display: block;
-  visibility: hidden;
   z-index: 999999999;
   position: fixed;
   width: 70px;
@@ -256,7 +287,12 @@
   -ms-transition: all 1.2s;
   -moz-transition: all 1.2s;
   -o-transition: all 1.2s;
+}
+
+/* line 250, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site #home .c-hamburger {
   animation: showNav 3.0s ease-in-out forwards;
+  visibility: hidden;
 }
 
 @keyframes showNav {
@@ -271,12 +307,12 @@
   }
 }
 
-/* line 233, C:/Users/chris/Desktop/sass/test.scss */
+/* line 267, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger:focus {
   outline: none;
 }
 
-/* line 236, C:/Users/chris/Desktop/sass/test.scss */
+/* line 270, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger span {
   display: block;
   position: absolute;
@@ -287,7 +323,7 @@
   background: white;
 }
 
-/* line 246, C:/Users/chris/Desktop/sass/test.scss */
+/* line 280, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger span::before,
 .pretty-site .c-hamburger span::after {
   position: absolute;
@@ -299,91 +335,94 @@
   content: "";
 }
 
-/* line 257, C:/Users/chris/Desktop/sass/test.scss */
+/* line 291, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger span::before {
   top: -10px;
 }
 
-/* line 261, C:/Users/chris/Desktop/sass/test.scss */
+/* line 295, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger span::after {
   bottom: -10px;
 }
 
-/* line 265, C:/Users/chris/Desktop/sass/test.scss */
+/* line 299, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx {
   background-color: #2a2929;
+  border: solid 1px #eee;
+  border-radius: 0px !important;
 }
 
-/* line 269, C:/Users/chris/Desktop/sass/test.scss */
+/* line 305, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx:hover {
   background-color: #2a2929;
 }
 
-/* line 273, C:/Users/chris/Desktop/sass/test.scss */
+/* line 309, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx span {
   transition: background 0s 0.3s;
 }
 
-/* line 278, C:/Users/chris/Desktop/sass/test.scss */
+/* line 314, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx span::before {
   transition-property: top, transform;
 }
 
-/* line 282, C:/Users/chris/Desktop/sass/test.scss */
+/* line 318, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx span::after {
   transition-property: bottom, transform;
 }
 
-/* line 287, C:/Users/chris/Desktop/sass/test.scss */
+/* line 323, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx.is-active span {
   background: none;
 }
 
-/* line 291, C:/Users/chris/Desktop/sass/test.scss */
+/* line 327, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx.is-active span::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-/* line 296, C:/Users/chris/Desktop/sass/test.scss */
+/* line 332, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx.is-active span::after {
   bottom: 0;
   transform: rotate(-45deg);
 }
 
-/* line 301, C:/Users/chris/Desktop/sass/test.scss */
+/* line 337, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx.is-active span::before,
 .pretty-site .c-hamburger--htx.is-active span::after {
   transition-delay: 0s, 0.3s;
 }
 
-/* line 306, C:/Users/chris/Desktop/sass/test.scss */
+/* line 342, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htra span::before {
   transition: all .2s !important;
 }
 
-/* line 310, C:/Users/chris/Desktop/sass/test.scss */
+/* line 346, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htra span::after {
   transition: all .2s !important;
 }
 
-/* line 314, C:/Users/chris/Desktop/sass/test.scss */
+/* line 350, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htra span {
   transition: all .2s !important;
+  transform: rotate(180deg) !important;
 }
 
-/* line 318, C:/Users/chris/Desktop/sass/test.scss */
+/* line 356, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htra span::before,
 .pretty-site .c-hamburger--htra span::after {
   transition: all .2s !important;
 }
 
-/* line 323, C:/Users/chris/Desktop/sass/test.scss */
+/* line 361, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htx:hover span {
   background: #fff;
 }
 
-/* line 327, C:/Users/chris/Desktop/sass/test.scss */
+/* line 365, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htra:hover span::before {
   transform-origin: top left !important;
   top: 0 !important;
@@ -391,7 +430,7 @@
   transition: all .3s !important;
 }
 
-/* line 334, C:/Users/chris/Desktop/sass/test.scss */
+/* line 372, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htra:hover span::after {
   transform-origin: bottom left !important;
   bottom: 0 !important;
@@ -399,19 +438,14 @@
   transition: all .3s !important;
 }
 
-/* line 341, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site .c-hamburger--htra:hover span {
-  transform: rotate(180deg) !important;
-}
-
-/* line 345, C:/Users/chris/Desktop/sass/test.scss */
+/* line 379, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .c-hamburger--htra:hover span::before,
 .pretty-site .c-hamburger--htra:hover span::after {
   width: 50% !important;
   transition: all .3s !important;
 }
 
-/* line 355, C:/Users/chris/Desktop/sass/test.scss */
+/* line 389, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .box {
   position: fixed;
   width: calc(100% - 70px);
@@ -445,7 +479,7 @@
   }
 }
 
-/* line 389, C:/Users/chris/Desktop/sass/test.scss */
+/* line 423, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .typewriter {
   height: 100%;
   display: flex;
@@ -455,7 +489,7 @@
   height: 90%;
 }
 
-/* line 399, C:/Users/chris/Desktop/sass/test.scss */
+/* line 433, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .typewriter h1 {
   font-size: 30px;
   text-align: center;
@@ -504,24 +538,24 @@
   }
 }
 
-/* line 445, C:/Users/chris/Desktop/sass/test.scss */
+/* line 479, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .red {
   color: #a82b5b;
 }
 
-/* line 449, C:/Users/chris/Desktop/sass/test.scss */
+/* line 483, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .black {
   color: #000;
 }
 
-/* line 453, C:/Users/chris/Desktop/sass/test.scss */
+/* line 487, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site #hero {
   width: 100%;
-  background: url("http://image.vsco.co/1/5692f8394e80513625973/569466f3ed07f3285c44f56c/1024x768/vsco_011116.jpg");
+  background: url("https://image.vsco.co/1/5692f8394e80513625973/569466f3ed07f3285c44f56c/1024x768/vsco_011116.jpg");
   background-size: cover;
 }
 
-/* line 459, C:/Users/chris/Desktop/sass/test.scss */
+/* line 493, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .hero-overlay {
   height: 100%;
   background: rgba(255, 255, 255, 0.2);
@@ -529,7 +563,7 @@
   background-repeat: repeat;
 }
 
-/* line 466, C:/Users/chris/Desktop/sass/test.scss */
+/* line 500, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site #hero .hero-text {
   position: absolute;
   bottom: 50px;
@@ -537,7 +571,7 @@
   right: 50px;
 }
 
-/* line 473, C:/Users/chris/Desktop/sass/test.scss */
+/* line 507, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site #hero h1 {
   width: auto;
   text-transform: uppercase;
@@ -547,63 +581,69 @@
   color: fff;
 }
 
-/* line 483, C:/Users/chris/Desktop/sass/test.scss */
+/* line 517, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site #hero h1 span {
   background: #000;
   padding: 5px 10px;
 }
 
-/* line 492, C:/Users/chris/Desktop/sass/test.scss */
+/* line 527, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site {
   height: 100%;
   width: 100%;
 }
 
-/* line 497, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site {
+/* line 532, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site{
   font-family: 'Open Sans', sans-serif;
   background-image: none !important;
 }
 
-/* line 501, C:/Users/chris/Desktop/sass/test.scss */
+/* line 536, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site:not(#home) {
   margin: 0 auto;
   max-width: 900px;
 }
 
 @media (max-width: 900px) {
-  /* line 507, C:/Users/chris/Desktop/sass/test.scss */
+  /* line 542, C:/Users/chris/Desktop/sass/test.scss */
   .pretty-site {
     width: 95%;
   }
-  /* line 510, C:/Users/chris/Desktop/sass/test.scss */
+  /* line 545, C:/Users/chris/Desktop/sass/test.scss */
   .pretty-site table {
     width: 100%;
   }
 }
 
-/* line 515, C:/Users/chris/Desktop/sass/test.scss */
+/* line 550, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site p {
   margin: 15px 0;
   line-height: 1.5em;
 }
 
-/* line 520, C:/Users/chris/Desktop/sass/test.scss */
+/* line 555, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site font {
+  line-height: 2em;
+}
+
+/* line 559, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site li {
   margin: 7px 0;
   line-height: 1.2em;
 }
 
-/* line 525, C:/Users/chris/Desktop/sass/test.scss */
+/* line 564, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site ul, .pretty-site ol {
-  padding-left: 25px;
+  padding-left: 35px;
 }
 
-/* line 529, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site:not(#home) > :first-child {
+/* line 568, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site:not(#home) > :nth-child(3),
+.pretty-site:not(.vsc-initialized) > :nth-child(3) {
   margin-top: 0 !important;
   background-color: #333;
-  padding: 50px 0;
+  padding: 76px 0;
   color: white;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -611,9 +651,11 @@
   position: relative;
   border: none;
   text-align: left;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
 }
 
-/* line 542, C:/Users/chris/Desktop/sass/test.scss */
+/* line 587, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site a {
   background-size: 100% 200%;
   background-position: 0% 0%;
@@ -625,7 +667,7 @@
   color: #0474af;
 }
 
-/* line 553, C:/Users/chris/Desktop/sass/test.scss */
+/* line 598, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site a:hover {
   color: #292929;
   background-position: 0% -195%;
@@ -633,35 +675,56 @@
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #292929 50%);
 }
 
-/* line 560, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site table {
-  box-shadow: 0px 0px 20px  #8b8a8a;
+/* line 605, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site img {
+  display: block;
   margin: 15px auto;
 }
 
-/* line 565, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site table tr {
-  border-bottom: 1px solid #333;
+/* line 610, C:/Users/chris/Desktop/sass/test.scss */
+.pretty-site table {
+  box-shadow: 0px 3px 10px  #cbcbcb;
+  margin: 15px auto;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  width: 100%;
 }
 
-/* line 569, C:/Users/chris/Desktop/sass/test.scss */
+/* line 618, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site tr:last-child {
   border-bottom: 0px solid #fff !important;
 }
 
-/* line 573, C:/Users/chris/Desktop/sass/test.scss */
+/* line 622, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site table tr:nth-child(2n) {
-  background: #e3e3e3;
+  background: red;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #e3e3e3, #f8f8f8);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #e3e3e3, #f8f8f8);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #e3e3e3, #f8f8f8);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #e3e3e3, #f8f8f8);
+  /* Standard syntax */
 }
 
-/* line 577, C:/Users/chris/Desktop/sass/test.scss */
+/* line 630, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site table td {
   padding: 8px;
 }
 
-/* line 582, C:/Users/chris/Desktop/sass/test.scss */
+/* line 635, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site code {
   font-family: monospace;
 }
 
-/*# sourceMappingURL=D:/Mikes-Got-Style-master (5)/Mikes-Got-Style-master/assets/css/test.map */
+#nav, #nav-expand{
+    display: none!important;
+}
+
+.pretty-site #nav, .pretty-site #nav-expand{
+    display: block !important;   
+}
+}
+/*# sourceMappingURL=../test.map */
