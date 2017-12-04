@@ -4,7 +4,7 @@ function toggle() {
             chrome.storage.sync.set({'isPretty': false}, function(){
                 button.style.fill = "red";
                 chrome.tabs.executeScript({
-                    code: "var body = document.getElementsByTagName(\"body\")[0]; body.className = \"\";"
+                    code: "var body = document.getElementsByTagName(\"body\")[0]; body.className = \"\""
                 });
             });
         }else{
