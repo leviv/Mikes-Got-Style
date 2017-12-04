@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 00bb3b0... Now the current state is saved in local storage
 $(document).ready(function () {
 
 	var webAddress = window.location.href;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function toggle() {
     chrome.storage.sync.get('isPretty', function(data){
         if(data.isPretty == true){
@@ -17,25 +18,31 @@ function toggle() {
         }
     });
     
+=======
+
+function hello() {
+  chrome.tabs.executeScript({
+    file: 'toggle.js'
+  }); 
+>>>>>>> parent of 00bb3b0... Now the current state is saved in local storage
 }
 
 window.onload = function(){
     var button = document.getElementById('button');
-    init();
+    button.style.fill = "red";
     button.onmousedown = handleClick;
 };
 
 function handleClick(evt){
     evt.preventDefault();
-    toggle();
+    hello();
+    toggleColor();
 }
 
-function init(){
-    chrome.storage.sync.get('isPretty', function(data){
-        if(data.isPretty == true){
-            button.style.fill = "green";
-        }else{
-            button.style.fill = "red";
-        }
-    });
+function toggleColor(){
+    if(button.style.fill == "red"){
+        button.style.fill = "green";
+    }else{
+        button.style.fill = "red";
+    }
 }
