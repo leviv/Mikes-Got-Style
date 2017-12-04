@@ -600,7 +600,7 @@
 }
 
 /* line 536, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site:not(#home) {
+.pretty-site {
   margin: 0 auto;
   max-width: 900px;
 }
@@ -639,8 +639,7 @@
 }
 
 /* line 568, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site:not(#home) > :nth-child(3),
-.pretty-site:not(.vsc-initialized) > :nth-child(3) {
+.pretty-site > :nth-child(3) {
   margin-top: 0 !important;
   background-color: #333;
   padding: 76px 0;
@@ -653,6 +652,21 @@
   text-align: left;
   border-radius: 0px;
   -webkit-border-radius: 0px;
+}
+
+.pretty-site#home > :nth-child(3) {
+	margin-top: auto !important;
+	background-color: #fff !important;
+	padding: auto !important;
+	color: #000 !important;
+	width: 100%;
+	margin-left: auto !important;
+	padding-left: auto !important;
+	position: relative;
+	border: none;
+	text-align: center !important;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
 }
 
 /* line 587, C:/Users/chris/Desktop/sass/test.scss */
