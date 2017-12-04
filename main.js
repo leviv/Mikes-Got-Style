@@ -1,4 +1,12 @@
-
+chrome.storage.sync.get('isPretty', function(data){
+    if(data.isPretty == true){
+        var body = document.getElementsByTagName("body")[0]; 
+        body.className = "pretty-site";
+    }else{
+        var body = document.getElementsByTagName("body")[0]; 
+        body.className = "";
+    }
+});
 
 $(document).ready(function () {
 	var webAddress = window.location.href;
