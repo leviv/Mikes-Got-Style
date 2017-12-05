@@ -166,7 +166,7 @@
 
 /* line 138, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-item {
-  font-size: 20px;
+  font-size: 10px;
   line-height: 70px;
   font-weight: 800;
   text-transform: uppercase;
@@ -639,7 +639,14 @@
 }
 
 /* line 568, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site > :nth-child(3) {
+
+.pretty-site#home table {
+	margin-top: 0 !important;
+	border: 0px solid #fff;
+	box-shadow: 0px 0px 0px  #fff;
+} 
+
+.pretty-site:not(#home) > :nth-child(3) {
   margin-top: 0 !important;
   background-color: #333;
   padding: 76px 0;
@@ -652,21 +659,6 @@
   text-align: left;
   border-radius: 0px;
   -webkit-border-radius: 0px;
-}
-
-.pretty-site#home > :nth-child(3) {
-	margin-top: auto !important;
-	background-color: #fff !important;
-	padding: auto !important;
-	color: #000 !important;
-	width: 100%;
-	margin-left: auto !important;
-	padding-left: auto !important;
-	position: relative;
-	border: none;
-	text-align: center !important;
-	border-radius: 0px;
-	-webkit-border-radius: 0px;
 }
 
 /* line 587, C:/Users/chris/Desktop/sass/test.scss */
