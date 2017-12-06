@@ -20,7 +20,12 @@ $(document).ready(function () {
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs312"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs312//"
 		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs312/index.htm"
-		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs312/index.html"
+		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs312/index.html" || webAddress == "http://www.cs.utexas.edu/~scottm/cs314/"
+		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314/"
+		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314"
+		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314//"
+		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs314/index.htm"
+		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs314/index.html"
 	) {
 		$('body').attr('id', 'home');
 	}

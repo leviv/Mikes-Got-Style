@@ -124,8 +124,14 @@
   }
   /* line 99, C:/Users/chris/Desktop/sass/test.scss */
   .pretty-site .nav-list h2 {
-    font-size: .5em;
+    font-size: 1em;
   }
+	
+	.pretty-site .nav-item {
+		font-size: 10px;
+		line-height: 15px;
+		height: 20px !important;
+	}
   /* line 103, C:/Users/chris/Desktop/sass/test.scss */
   .pretty-site #nav-expand {
     overflow: scroll !important;
@@ -167,10 +173,11 @@
 /* line 138, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site .nav-item {
   font-size: 10px;
-  line-height: 70px;
+  line-height: 30px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
+height: 90px;
 }
 
 /* line 146, C:/Users/chris/Desktop/sass/test.scss */
@@ -252,6 +259,7 @@
   -moz-transition: background .5s;
   -o-transition: background .5s;
   list-style: none !important;
+	overflow: scroll;
 }
 
 /* line 217, C:/Users/chris/Desktop/sass/test.scss */
@@ -690,9 +698,10 @@
 /* line 610, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site table {
   box-shadow: 0px 3px 10px  #cbcbcb;
+	border: none !important;
   margin: 15px auto;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
+  border-radius: 10px !important;
+	-webkit-border-radius: 10px !important;
   width: 100%;
 }
 
