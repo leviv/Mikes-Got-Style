@@ -3,7 +3,8 @@
   "name": "Mike's Got Style",
   "version": "0.1",
   "content_scripts": [
-  {
+  { 
+    "run_at": "document_start", 
     "matches": [
 		"http://www.cs.utexas.edu/~scottm/*",
 		"https://www.cs.utexas.edu/~scottm/*"

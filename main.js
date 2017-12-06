@@ -1,13 +1,20 @@
 chrome.storage.sync.get('isPretty', function(data){
+    var body = document.getElementsByTagName("body")[0];
     if(data.isPretty == true){
+        body.className = "pretty-site";
+    }else{
+        body.className = "";
+    }
+});
+
+
+    /*if(data.isPretty == true){
         var body = document.getElementsByTagName("body")[0]; 
         body.className = "pretty-site";
     }else{
         var body = document.getElementsByTagName("body")[0]; 
         body.className = "";
-    }
-});
-
+    }*/
 $(document).ready(function () {
 	var webAddress = window.location.href;
 	var parent = document.getElementsByTagName("html");
@@ -20,12 +27,7 @@ $(document).ready(function () {
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs312"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs312//"
 		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs312/index.htm"
-		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs312/index.html" || webAddress == "http://www.cs.utexas.edu/~scottm/cs314/"
-		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314/"
-		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314"
-		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314//"
-		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs314/index.htm"
-		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs314/index.html"
+		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs312/index.html"
 	) {
 		$('body').attr('id', 'home');
 	}
