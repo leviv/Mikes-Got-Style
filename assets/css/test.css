@@ -72,6 +72,14 @@
     background-image: none !important;
 }
 
+pre {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
 /* line 38, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site ul {
   list-style: none;
@@ -197,6 +205,7 @@ height: 90px;
 .pretty-site .brief {
   color: #fff;
   background: #333 !important;
+	padding: 0px 7px;
 }
 
 /* line 155, C:/Users/chris/Desktop/sass/test.scss */
@@ -780,8 +789,8 @@ height: 90px;
 }
 
 .pretty-site .brief h2{
-    padding-top: 32px;
-    font-size: 36px;
+    padding-top: 30px;
+    font-size: 25px;
 }
 
 .pretty-site .c-hamburger span{
