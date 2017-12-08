@@ -56,8 +56,17 @@
 }
 
 /* line 35, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site {
+ #home {
   line-height: 1;
+    overflow-x: hidden;
+    background-image: url('http://pcpa.imgix.net/pcpa_assets/2013/10/bill-mellinda-gates-computer-science-complex04.jpg?w=1600&h=1100') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pretty-site{
+    overflow-x: hidden;
+    background-image: none;
 }
 
 /* line 38, C:/Users/chris/Desktop/sass/test.scss */
@@ -85,7 +94,6 @@
 
 /* line 54, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site{
-  background-image: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
 }
@@ -133,9 +141,6 @@
 		height: 20px !important;
 	}
   /* line 103, C:/Users/chris/Desktop/sass/test.scss */
-  .pretty-site #nav-expand {
-    overflow: scroll !important;
-  }
   /* line 106, C:/Users/chris/Desktop/sass/test.scss */
   .pretty-site .nav-item {
     line-height: 20px !important;
@@ -299,6 +304,7 @@ height: 90px;
 
 /* line 250, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site #home .c-hamburger {
+    z-index: 9;
   animation: showNav 3.0s ease-in-out forwards;
   visibility: hidden;
 }
@@ -604,7 +610,6 @@ height: 90px;
 /* line 532, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site{
   font-family: 'Open Sans', sans-serif;
-  background-image: none !important;
 }
 
 /* line 536, C:/Users/chris/Desktop/sass/test.scss */
@@ -666,7 +671,12 @@ height: 90px;
   border: none;
   text-align: left;
   border-radius: 0px;
+    line-height: 10px;
   -webkit-border-radius: 0px;
+}
+
+.pretty-site:not(#home) > :nth-child(3) font{
+    font-size: 32px;
 }
 
 /* line 587, C:/Users/chris/Desktop/sass/test.scss */
@@ -678,15 +688,15 @@ height: 90px;
   -webkit-transition: all .5s;
   text-decoration: none;
   overflow: hidden;
-  color: #0474af;
+  color: #bf5700;
 }
 
 /* line 598, C:/Users/chris/Desktop/sass/test.scss */
 .pretty-site a:hover {
-  color: #292929;
+  color: #bf5700;
   background-position: 0% -195%;
   text-decoration: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #292929 50%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #bf5700 50%);
 }
 
 /* line 605, C:/Users/chris/Desktop/sass/test.scss */
@@ -711,7 +721,7 @@ height: 90px;
 }
 
 /* line 622, C:/Users/chris/Desktop/sass/test.scss */
-.pretty-site table tr:nth-child(2n) {
+.pretty-site table:not("#home") tr:nth-child(2n) {
   background: red;
   /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #e3e3e3, #f8f8f8);
@@ -741,5 +751,86 @@ height: 90px;
 .pretty-site #nav, .pretty-site #nav-expand{
     display: block !important;   
 }
+
+.pretty-site table:not("#home"){
+    border: 1px solid #333 !important;
+}
+
+.pretty-site hr{
+    opacity: 0;
+}
+
+.pretty-site hr+b{
+    color: gray;
+}
+
+.pretty-site font+br{
+   display: block;
+   margin: -20px 0;
+    content: ' ';
+}
+
+.pretty-site span{
+    background-color: #F9D654 !important;
+}
+
+.pretty-site .nav-item span{
+    background-color: transparent !important;
+}
+
+.pretty-site .brief h2{
+    padding-top: 32px;
+    font-size: 36px;
+}
+
+.pretty-site .c-hamburger span{
+    background-color: rgb(191, 87, 0) !important;
+}
+
+#home p+table{
+    border: 1px solid #333 !important;
+}
+
+#home p+table tbody{
+    border: 1px solid #333 !important;
+}
+
+#home p+table td{
+    border: 1px solid #333 !important;
+}
+
+#home p>font{
+    font-weight: bold;
+}
+
+#home center>table{
+    border: 0 !important;
+}
+
+.pretty-site #background{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    z-index: -99999;
+}
+
+#background{
+    display: none;    
+}
+
+.pretty-site>div{
+    padding: 10px;
+    background-color: rgba(245,245,245,.8);
+    margin-bottom: 55px;
+}
+
+.pretty-site pre{
+    background-color: white !important;
+    color: black !important;
+    font-size: 16px;
+    line-height: 16px !important;
 }
 /*# sourceMappingURL=../test.map */
