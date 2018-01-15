@@ -41,9 +41,13 @@ $(document).ready(function () {
 		webAddress == "http://www.cs.utexas.edu/~scottm/cs314/"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314/"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314"
+		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs314"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314//"
+		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs314//"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314/index.htm"
 		|| webAddress == "https://www.cs.utexas.edu/~scottm/cs314/index.html"
+		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs314/index.html"
+		|| webAddress == "http://www.cs.utexas.edu/~scottm/cs314/index.htm"
 	) {
 		$('body').attr('id', 'home');
 		
