@@ -1,12 +1,11 @@
-chrome.storage.sync.get('isPretty', function(data){
+/*chrome.storage.sync.get('isPretty', function(data){
     var body = document.getElementsByTagName("body")[0];
     if(data.isPretty == true){
         body.className = "pretty-site";
     }else{
         body.className = "";
     }
-});
-
+});*/
 
     /*if(data.isPretty == true){
         var body = document.getElementsByTagName("body")[0]; 
@@ -16,6 +15,11 @@ chrome.storage.sync.get('isPretty', function(data){
         body.className = "";
     }*/
 $(document).ready(function () {
+	
+	var body = document.getElementsByTagName("body")[0];
+	
+	body.className = 'pretty-site';
+	
 	var webAddress = window.location.href;
 	var parent = document.getElementsByTagName("html");
 

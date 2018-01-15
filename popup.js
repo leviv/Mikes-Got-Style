@@ -1,4 +1,4 @@
-function toggle() {
+/*function toggle() {
     chrome.storage.sync.get('isPretty', function(data){
         if(data.isPretty == true){
             chrome.storage.sync.set({'isPretty': false}, function(){
@@ -39,3 +39,4 @@ function init(){
         }
     });
 }
+*/
